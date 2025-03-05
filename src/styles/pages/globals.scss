@@ -1,0 +1,24 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100dvh;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  @include mix.Scroll;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

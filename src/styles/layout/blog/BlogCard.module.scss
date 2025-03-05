@@ -1,0 +1,133 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.card {
+  display: block;
+  width: 100%;
+  background: var.$neutral_color_100;
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 0 0 2px 2px #0001;
+  transition: filter 0.15s ease-in-out;
+
+  &_image {
+    width: 100%;
+    aspect-ratio: 16/12;
+    position: relative;
+    overflow: hidden;
+    background: var.$brand_color_500;
+
+    img {
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+
+  &_views {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    padding-bottom: 0;
+
+    .views_eye,
+    .views_message {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25em;
+      color: var.$neutral_color_600;
+
+      p {
+        font-size: 0.9em;
+      }
+    }
+
+    .views_eye {
+      svg {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  &_info {
+    padding: 1em;
+    padding-top: 0.5em;
+
+    .info_title {
+      h2 {
+        font-size: 1.05em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .info_time {
+      display: flex;
+      justify-content: space-between;
+      color: var.$neutral_color_600;
+
+      p {
+        font-size: 0.9em;
+      }
+    }
+
+    .info_title {
+      h1 {
+        // font-weight: normal;
+      }
+    }
+  }
+
+  &_by {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    padding-top: 0;
+
+    .by_image {
+      position: relative;
+      width: 42px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .by_info {
+      p {
+        font-weight: bold;
+      }
+
+      time {
+        color: var.$neutral_color_600;
+        font-size: 0.85em;
+      }
+    }
+  }
+
+  &.column {
+    .card_image {
+      aspect-ratio: auto;
+      background: transparent;
+
+      img {
+        width: 100%;
+        height: 100%;
+        max-height: 400px;
+
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  &:hover {
+    filter: brightness(0.95);
+    .card_image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

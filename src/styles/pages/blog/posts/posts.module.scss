@@ -1,0 +1,20 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.posts {
+  padding: 7em 2em;
+
+  &_title {
+    text-align: center;
+  }
+
+  &_post {
+    columns: 3;
+    column-gap: 1em;
+    margin-top: 2em;
+
+    > *:not(:first-child) {
+      margin-top: 1em;
+    }
+  }
+}

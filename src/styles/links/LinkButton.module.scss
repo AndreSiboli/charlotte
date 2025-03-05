@@ -1,0 +1,26 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.link {
+  display: inline-block;
+  padding: 1em 1.5em;
+  border-radius: 0.25em;
+  background: var.$brand_color_500;
+  color: var.$pri_text_color;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: 1px solid transparent;
+
+  &.v1 {
+    background: var.$neutral_color_100;
+    color: #000;
+    border-color: var.$neutral_color_900;
+  }
+
+  &.v2 {
+    background: var.$neutral_color_900;
+    color: #fff;
+    border-color: var.$neutral_color_100;
+  }
+}

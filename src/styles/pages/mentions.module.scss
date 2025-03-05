@@ -1,0 +1,43 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.mentions {
+  padding: 7em 2em;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+  }
+
+  &_authors {
+    columns: 4;
+    column-gap: 1em;
+
+    @media (max-width: 1020px){
+        columns: 250px;
+    }
+  }
+
+  .author {
+    display: inline-block;
+    padding: 1em;
+    box-shadow: 0 0 2px #0002;
+    margin-top: 1em;
+
+    &_image {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    h2 {
+      font-size: 100%;
+      text-align: center;
+    }
+  }
+}

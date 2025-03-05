@@ -1,0 +1,57 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.services {
+  padding: 5em 2em;
+  user-select: none;
+
+  &_container {
+    --slider-gap: 2em;
+    display: flex;
+    gap: var(--slider-gap);
+    overflow-x: hidden;
+
+    @include mix.OnlyPc {
+      &:hover > .services_slider {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  &_slider {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: var(--slider-gap);
+    animation: 20s linear infinite infiniteSlide;
+
+    @keyframes infiniteSlide {
+      to {
+        transform: translateX(calc(-100% - var(--slider-gap)));
+      }
+    }
+  }
+
+  .service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+    aspect-ratio: 1/1;
+
+    &_icon {
+      svg {
+        display: block;
+        margin: 0 auto;
+        font-size: 5em;
+        color: var.$brand_color_500;
+      }
+    }
+
+    &_title {
+      text-transform: uppercase;
+      color: var.$neutral_color_500;
+    }
+  }
+}

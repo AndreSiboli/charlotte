@@ -1,0 +1,66 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.about {
+  min-height: 600px;
+  position: relative;
+  padding: 0em 2em;
+
+  &:after {
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background: var.$brand_color_100;
+  }
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+
+    @media (max-width: 1060px) {
+      justify-content: center;
+    }
+  }
+
+  &_info {
+    padding-top: 7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+
+    .info_image {
+      width: 100%;
+      aspect-ratio: 1/1;
+      position: relative;
+    }
+
+    .info_link {
+      max-width: 150px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &_image {
+    flex: 0 1 65%;
+
+    @media (max-width: 1020px) {
+      display: none;
+    }
+
+    .image_container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+  }
+}
