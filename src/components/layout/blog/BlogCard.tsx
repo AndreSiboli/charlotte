@@ -6,6 +6,7 @@ import Link from "next/link";
 import { PiEye } from "react-icons/pi";
 import { FaRegMessage } from "react-icons/fa6";
 import { PostType } from "@/_types/PostsType";
+import By from "./post/By";
 
 interface PropsType {
   post: PostType;
@@ -28,35 +29,28 @@ export default function BlogCard(props: PropsType) {
         )}
       </figure>
 
-      <div className={styles.card_views}>
-        <div className={styles.views_eye}>
-          <PiEye />
-          <p>{post.vizualization}</p>
-        </div>
-        <div className={styles.views_message}>
-          <FaRegMessage />
-          <p>{post.vizualization - 54}</p>
-        </div>
-      </div>
-
       <div className={styles.card_info}>
-        <div className={styles.info_title}>
-          <h2>{post.title}</h2>
+        <div className={styles.info_views}>
+          <div className={styles.views_eye}>
+            <PiEye />
+            <p>{post.vizualization}</p>
+          </div>
+          <div className={styles.views_message}>
+            <FaRegMessage />
+            <p>{post.vizualization - 54}</p>
+          </div>
         </div>
-        <div className={styles.info_time}>
-          <p>{post.readingTime}</p>
-        </div>
-      </div>
 
-      <div className={styles.card_by}>
-        <figure className={styles.by_image}>
-          <Img src={post.author.src} />
-        </figure>
-
-        <div className={styles.by_info}>
-          <p>{post.author.name}</p>
-          <time>{post.createdAt}</time>
+        <div className={styles.info_middle}>
+          <div className={styles.middle_title}>
+            <h2>{post.title}</h2>
+          </div>
+          <div className={styles.middle_time}>
+            <p>{post.readingTime}</p>
+          </div>
         </div>
+
+        <By author={post.author} createdAt={post.createdAt} />
       </div>
     </Link>
   );

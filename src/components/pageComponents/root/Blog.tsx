@@ -10,7 +10,7 @@ export default function Blog() {
       <Container>
         <div className={styles.blog_container}>
           <div className={styles.blog_posts}>
-            {posts.map((post) => (
+            {posts.slice(0, 4).map((post) => (
               <BlogCard post={post} key={post.id} />
             ))}
           </div>

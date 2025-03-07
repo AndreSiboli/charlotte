@@ -7,6 +7,7 @@ import Link from "next/link";
 export default function Footer() {
   const footerLinks = [
     { text: "FAQ", href: "/faq" },
+    { text: "Mentions", href: "/mentions" },
     { text: "License", href: "/license" },
     { text: "Contact", href: "/#projects" },
   ];

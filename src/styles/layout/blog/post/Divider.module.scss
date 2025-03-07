@@ -1,0 +1,9 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.divider {
+  background: var.$neutral_color_400;
+  width: 100%;
+  height: 1px;
+  margin: 0 auto;
+}

@@ -1,13 +1,12 @@
 import styles from "@/styles/pageComponents/root/Contact.module.scss";
+import { photos } from "@/data/photos";
 import Container from "../layout/Container";
 import FormContact from "../form/FormContact";
 import Img from "../utils/Img";
 
-import image from '@/assets/camila-cordeiro-PTLZBm56obg-unsplash.jpg'
-import image2 from '@/assets/photos/pexels-beccacorreiaph-20401301.jpg'
-import image3 from '@/assets/photographer/pexels-vario-2149731000-30766043.jpg'
-
 export default function Contact() {
+  const idImages = ["AAA911", "AAA116", "AAA811"];
+
   return (
     <div className={styles.contact} id="contact">
       <Container>
@@ -15,9 +14,11 @@ export default function Contact() {
           <FormContact />
           <div className={styles.contact_image}>
             <figure className={styles.image_container}>
-                <Img src={image}/>
-                <Img src={image2}/>
-                <Img src={image3}/>
+              {photos
+                .filter((photo) => idImages.some((id) => photo.id === id))
+                .map((photo) => (
+                  <Img src={photo.src} alt={photo.alt} key={photo.id}/>
+                ))}
             </figure>
           </div>
         </div>

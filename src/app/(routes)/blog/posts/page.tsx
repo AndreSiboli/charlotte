@@ -1,6 +1,6 @@
 import styles from "@/styles/pages/blog/posts/posts.module.scss";
-import Container from "@/components/layout/Container";
 import { posts } from "@/data/posts";
+import Container from "@/components/layout/Container";
 import BlogCard from "@/components/layout/blog/BlogCard";
 
 export default function Posts() {

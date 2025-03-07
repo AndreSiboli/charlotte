@@ -3,28 +3,34 @@ import { StaticImageData } from "next/image";
 type ContentType =
   | {
       type: "img";
-      content: {
+      property: {
         src: StaticImageData;
         alt: string;
       };
     }
   | {
       type: "title";
-      content: {
+      property: {
         title: string;
       };
     }
   | {
       type: "text";
-      content: {
+      property: {
         text: string;
       };
     }
   | {
       type: "quote";
-      content: {
+      property: {
         text: string;
         author?: string;
+      };
+    }
+  | {
+      type: "sub-title";
+      property: {
+        title: string;
       };
     };
 
