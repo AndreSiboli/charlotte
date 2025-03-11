@@ -1,5 +1,4 @@
 import { PostType } from "@/_types/PostsType";
-import Img from "@/components/utils/Img";
 import styles from "@/styles/layout/blog/DynamicPost.module.scss";
 import Image from "next/image";
 

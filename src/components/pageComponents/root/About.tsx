@@ -1,11 +1,9 @@
 import styles from "@/styles/pageComponents/root/About.module.scss";
-
 import Container from "@/components/layout/Container";
 import Img from "@/components/utils/Img";
 import LinkButton from "@/components/links/LinkButton";
-
-import charlotte from "@/assets/photographer/pexels-vario-2149731000-30766044.jpg";
-import charlotte2 from "@/assets/photographer/pexels-vario-2149731000-30766043.jpg";
+import charlotteImage from "@/assets/photographer/pexels-vario-2149731000-30766044.jpg";
+import charlotteImage2 from "@/assets/photographer/pexels-vario-2149731000-30766043.jpg";
 
 export default function About() {
   return (
@@ -17,7 +15,7 @@ export default function About() {
               <h1>Charlotte</h1>
             </div>
             <figure className={styles.info_image}>
-              <Img src={charlotte} />
+              <Img src={charlotteImage} />
             </figure>
             <div className={styles.info_description}>
               <p>
@@ -33,7 +31,7 @@ export default function About() {
 
           <div className={styles.about_image}>
             <figure className={styles.image_container}>
-              <Img src={charlotte2} />
+              <Img src={charlotteImage2} />
             </figure>
           </div>
         </div>

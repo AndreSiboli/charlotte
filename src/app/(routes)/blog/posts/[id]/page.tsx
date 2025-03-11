@@ -33,7 +33,7 @@ export default function Post() {
               <PostHeader post={post} /> {/* Inline */}
               <Divider />
               {post.content.map((cont) => (
-                <DynamicPost content={cont} />
+                <DynamicPost content={cont} key={cont.type}/>
               ))}
               <Divider />
               <PostFooter post={post} /> {/* Inline */}
@@ -49,7 +49,7 @@ export default function Post() {
                   .filter((post) => post.id !== id)
                   .slice(0, 2)
                   .map((post) => (
-                    <BlogCard post={post} />
+                    <BlogCard post={post} key={post.id}/>
                   ))}
               </div>
             </div>

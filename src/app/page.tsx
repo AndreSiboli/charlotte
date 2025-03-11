@@ -13,7 +13,7 @@ export default function Home() {
       <Services />
       <Blog />
       <About />
-      <div style={{ height: "7em" }}></div>
+      <div style={{ height: "7em" }}/>
       <Works />
       <Contact />
     </>

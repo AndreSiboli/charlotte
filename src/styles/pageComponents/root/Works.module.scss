@@ -9,31 +9,6 @@
     width: 100%;
   }
 
-  &_media {
-    flex: 0 0 200px;
-    position: relative;
-
-    .media_links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1em;
-      position: sticky;
-      top: 50vh;
-      height: fit-content;
-
-      a {
-        font-size: 2em;
-        width: fit-content;
-        color: #000;
-
-        svg {
-          display: block;
-        }
-      }
-    }
-  }
-
   &_photos {
     columns: 250px;
     column-gap: 1em;

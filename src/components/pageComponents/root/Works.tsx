@@ -1,5 +1,5 @@
-import styles from "@/styles/pageComponents/root/Works.module.scss";
 import { photos } from "@/data/photos";
+import styles from "@/styles/pageComponents/root/Works.module.scss";
 import Container from "@/components/layout/Container";
 import Image from "next/image";
 
@@ -18,24 +18,25 @@ export default function Works() {
     "AAA171",
     "AAA181",
   ];
-  const images = photos.filter((photo) => ids.some((id) => id === photo.id));
 
   return (
     <div className={styles.works} id="photos">
       <Container>
         <div className={styles.works_container}>
           <div className={styles.works_photos}>
-            {images.map((work) => (
-              <div className={styles.work} key={work.id}>
-                <figure className={styles.work_image}>
-                  <Image
-                    src={work.src}
-                    alt=""
-                    style={{ objectFit: "cover", width: "100%" }}
-                  />
-                </figure>
-              </div>
-            ))}
+            {photos
+              .filter((photo) => ids.some((id) => id === photo.id))
+              .map((work) => (
+                <div className={styles.work} key={work.id}>
+                  <figure className={styles.work_image}>
+                    <Image
+                      src={work.src}
+                      alt={work.alt}
+                      style={{ objectFit: "cover", width: "100%" }}
+                    />
+                  </figure>
+                </div>
+              ))}
           </div>
         </div>
       </Container>

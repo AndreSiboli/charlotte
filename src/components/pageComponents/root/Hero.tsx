@@ -1,14 +1,13 @@
 import styles from "@/styles/pageComponents/root/Hero.module.scss";
 import Img from "@/components/utils/Img";
 import Container from "@/components/layout/Container";
-
-import heroImage from "@/assets/camila-cordeiro-PTLZBm56obg-unsplash.jpg";
+import heroImage from "@/assets/pexels-vlada-karpovich-4817149.jpg";
 
 export default function Hero() {
   return (
     <main className={styles.hero}>
       <figure className={styles.hero_wallpaper}>
-        <Img src={heroImage} />
+        <Img src={heroImage} style={{objectPosition: 'center 80%'}}/>
       </figure>
 
       <Container>

@@ -1,6 +1,12 @@
 @use "@/styles/_dirs/variables" as var;
 @use "@/styles/_dirs/mixins" as mix;
 
+@keyframes infiniteSlide {
+  to {
+    transform: translateX(calc(-100% - var(--slider-gap)));
+  }
+}
+
 .services {
   padding: 5em 2em;
   user-select: none;
@@ -24,12 +30,6 @@
     align-items: center;
     gap: var(--slider-gap);
     animation: 20s linear infinite infiniteSlide;
-
-    @keyframes infiniteSlide {
-      to {
-        transform: translateX(calc(-100% - var(--slider-gap)));
-      }
-    }
   }
 
   .service {

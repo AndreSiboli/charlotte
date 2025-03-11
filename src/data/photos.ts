@@ -1,6 +1,6 @@
 import { PhotosType } from "@/_types/PhotosType";
 
-import AAA111 from "@/assets/photos/camila-cordeiro-PTLZBm56obg-unsplash.jpg";
+import AAA111 from "@/assets/pexels-vlada-karpovich-4817149.jpg";
 import AAA112 from "@/assets/photos/pexels-13nuance-561463.jpg";
 import AAA113 from "@/assets/photos/pexels-adit-syahfiar-991235-30756289.jpg";
 import AAA114 from "@/assets/photos/pexels-adit-syahfiar-991235-30756291.jpg";
@@ -38,17 +38,18 @@ import AAL111 from "@/assets/photos/pexels-pavel-sharko-16627931.jpg";
 import AAM111 from "@/assets/photos/pexels-shiwa-yachachin-12903578.jpg";
 import AAN111 from "@/assets/photos/pexels-stijn-dijkstra-14297730.jpg";
 import AAO111 from "@/assets/photos/pexels-väinö-parjanen-16552341.jpg";
+import AAP111 from "@/assets/photos/pexels-beccacorreiaph-31095847.jpg";
 
 export const photos: PhotosType[] = [
   {
     id: "AAA111",
     author: {
-      name: "Camila Cordeiro",
-      href: "https://unsplash.com/pt-br/@camilacordeiro",
+      name: "Vlada Karpovich",
+      href: "https://www.pexels.com/pt-br/@vlada-karpovich/",
     },
     src: AAA111,
-    alt: "Blonde woman laying on floor with a sunlight on his face",
-    tags: ["human", "female", "woman", "blonde", "sunlight"],
+    alt: "Beautiful woman kneeling on cloth with rose petals",
+    tags: ["human", "female", "woman", "dress", "sunlight", "grass", "rose"],
   },
   {
     id: "AAA112",
@@ -417,6 +418,16 @@ export const photos: PhotosType[] = [
     src: AAN111,
     alt: "A bull looking at camera",
     tags: ["animal", "bull", "tree"],
+  },
+  {
+    id: "AAP111",
+    author: {
+      name: "Becca Correia",
+      href: "https://www.pexels.com/pt-br/@beccacorreiaph/",
+    },
+    src: AAP111,
+    alt: "A lot of birds flying",
+    tags: ["animal", "bird", "birds", "sky"],
   },
   {
     id: "AAO111",

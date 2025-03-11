@@ -5,7 +5,7 @@ import AAA111 from "@/assets/photos/pexels-alex-azabache-5117913.jpg";
 import AAA112 from "@/assets/photos/pexels-vikkirillova-8796459.jpg";
 import AAA113 from "@/assets/photos/pexels-joyston-judah-933054.jpg";
 import AAA114 from "@/assets/photos/pexels-adit-syahfiar-991235-30756289.jpg";
-import AAA115 from "@/assets/photos/pexels-shiwa-yachachin-12903578.jpg";
+import AAA115 from "@/assets/photos/pexels-beccacorreiaph-31095847.jpg";
 
 export const posts: PostType[] = [
   {
@@ -16,9 +16,9 @@ export const posts: PostType[] = [
       src: photographer,
     },
     readingTime: "1 min de leitura",
-    createdAt: "04/09/2022",
+    createdAt: "09/24/2024",
     vizualization: 203,
-    votes: 212,
+    votes: 198,
     thumbnail: AAA111,
     content: [
       { type: "title", property: { title: "Lorem ipsum dolor" } },
@@ -57,8 +57,8 @@ export const posts: PostType[] = [
       src: photographer,
     },
     readingTime: "1 min de leitura",
-    createdAt: "04/19/2022",
-    vizualization: 106,
+    createdAt: "10/04/2024",
+    vizualization: 156,
     votes: 122,
     thumbnail: AAA112,
     content: [
@@ -95,9 +95,9 @@ export const posts: PostType[] = [
       src: photographer,
     },
     readingTime: "5 min de leitura",
-    createdAt: "04/22/2022",
-    vizualization: 503,
-    votes: 162,
+    createdAt: "12/11/2024",
+    vizualization: 213,
+    votes: 151,
     thumbnail: AAA113,
     content: [
       {
@@ -134,7 +134,7 @@ export const posts: PostType[] = [
       src: photographer,
     },
     readingTime: "5 min de leitura",
-    createdAt: "04/22/2022",
+    createdAt: "11/09/2024",
     vizualization: 503,
     votes: 162,
     thumbnail: AAA114,
@@ -173,9 +173,9 @@ export const posts: PostType[] = [
       src: photographer,
     },
     readingTime: "4 min de leitura",
-    createdAt: "04/22/2022",
+    createdAt: "12/16/2025",
     vizualization: 455,
-    votes: 103,
+    votes: 303,
     thumbnail: AAA115,
     content: [
       {
