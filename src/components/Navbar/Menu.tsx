@@ -12,7 +12,6 @@ export default function Menu(props: PropTypes) {
 
   function checkClose(e: MouseEvent<HTMLDivElement>) {
     const target = e.target as HTMLDivElement;
-    console.log(target);
     if (target.id === "menu") handleIsOpened();
   }
 

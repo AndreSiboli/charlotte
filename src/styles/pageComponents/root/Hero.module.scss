@@ -3,11 +3,11 @@
 
 @keyframes shadowEffect {
   0%,
-  88% {
-    color: #fff;
+  80% {
+    text-shadow: 0 0 0 transparent;
   }
   100% {
-    color: var.$brand-color-500;
+    text-shadow: 0 0 15px var.$brand_color_100;
   }
 }
 
@@ -27,14 +27,14 @@
     pointer-events: none;
     z-index: -1;
 
-    img{
+    img {
       background: var.$neutral_color_600;
     }
   }
 
   &_title {
     padding: 7em 0;
-    
+
     h1 {
       font-size: calc(1.5em + 2vw);
       font-weight: normal;

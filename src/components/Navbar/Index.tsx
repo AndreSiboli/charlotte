@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import styles from "@/styles/navbar/Index.module.scss";
 
 import Container from "@/components/layout/Container";
@@ -9,10 +10,10 @@ import Logo from "@/components/layout/Logo";
 import Link from "next/link";
 
 import { PiInstagramLogo } from "react-icons/pi";
-import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const PathName = usePathname();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [isOnTop, setIsOnTop] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
   const domains = [
@@ -31,18 +32,18 @@ export default function Navbar() {
 
   function isDomain() {
     const outDomains = ["/"];
-    if (outDomains.includes(PathName)) return false;
+    if (outDomains.includes(pathname)) return false;
     return true;
   }
 
-  function closeIsOpened() {
+  function closeMenu() {
     setIsOpened(false);
   }
 
   function windowWidth() {
     const width = window.innerWidth;
 
-    if (width > 900) closeIsOpened();
+    if (width > 900) closeMenu();
   }
 
   useEffect(() => {
@@ -61,6 +62,10 @@ export default function Navbar() {
       window.removeEventListener("scroll", scrolling);
     };
   }, [isOnTop]);
+
+  useEffect(() => {
+    closeMenu();
+  }, [pathname, searchParams]);
 
   return (
     <header
@@ -105,7 +110,7 @@ export default function Navbar() {
         </div>
       </Container>
 
-      <Menu isOpened={isOpened} handleIsOpened={closeIsOpened} />
+      <Menu isOpened={isOpened} handleIsOpened={closeMenu} />
     </header>
   );
 }

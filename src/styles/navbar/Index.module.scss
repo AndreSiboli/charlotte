@@ -67,7 +67,7 @@
     width: 32px;
     height: 24px;
     cursor: pointer;
-    
+
     @media (max-width: 900px) {
       display: block;
     }
@@ -108,6 +108,12 @@
 
   &.out_domain {
     color: #000;
+
+    .header_menu{
+      .trace{
+        background: var.$neutral_color_900;
+      }
+    }
   }
 
   &.opened {
