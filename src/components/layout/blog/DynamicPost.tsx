@@ -33,7 +33,7 @@ export default function DynamicPost(props: PropsType) {
   if (content.type === "quote") {
     return (
       <div className={styles.post_quote}>
-        <q>{content.property.text}</q>
+        <q>{content.property.quote}</q>
       </div>
     );
   }
@@ -43,5 +43,12 @@ export default function DynamicPost(props: PropsType) {
         <p>{content.property.text}</p>
       </div>
     );
+  }
+  if (content.type === "list") {
+   return  <ul className={styles.post_list}>
+      {content.property.items.map((item, i) => (
+        <li key={item+i}>{item}</li>
+      ))}
+    </ul>;
   }
 }

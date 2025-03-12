@@ -33,4 +33,21 @@
       font-size: 1.15em;
     }
   }
+
+  &_text{
+    p{
+      line-height: 1.5em;
+    }
+  }
+
+  &_list {
+    // list-style: none;
+    list-style-position: inside;
+
+    li {
+      &:not(:first-child) {
+        margin-top: 0.25em;
+      }
+    }
+  }
 }

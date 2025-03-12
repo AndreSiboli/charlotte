@@ -4,6 +4,15 @@ import Container from "@/components/layout/Container";
 import BlogCard from "@/components/layout/blog/BlogCard";
 
 export default function Posts() {
+  const newestPosts = posts.sort((a, b) => {
+    const aDate = new Date(b.createdAt).getTime();
+    const bDate = new Date(a.createdAt).getTime();
+
+    if (aDate > bDate) return 1;
+    if (aDate < bDate) return -1;
+    return 0;
+  });
+
   return (
     <div className={styles.posts}>
       <Container>
@@ -12,7 +21,7 @@ export default function Posts() {
             <h1>Blog</h1>
           </div>
           <div className={styles.posts_post}>
-            {posts.map((post) => (
+            {newestPosts.map((post) => (
               <BlogCard post={post} key={post.id} column />
             ))}
           </div>

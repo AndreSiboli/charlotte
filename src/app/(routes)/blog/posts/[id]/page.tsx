@@ -32,8 +32,8 @@ export default function Post() {
             <article className={styles.post_article}>
               <PostHeader post={post} /> {/* Inline */}
               <Divider />
-              {post.content.map((cont) => (
-                <DynamicPost content={cont} key={cont.type}/>
+              {post.content.map((cont, i) => (
+                <DynamicPost content={cont} key={cont.type + i} />
               ))}
               <Divider />
               <PostFooter post={post} /> {/* Inline */}
@@ -42,14 +42,14 @@ export default function Post() {
             <div className={styles.post_newest}>
               <div className={styles.newest_title}>
                 <h2>Newest posts</h2>
-                <Link href='/blog/posts'>See more</Link>
+                <Link href="/blog/posts">See more</Link>
               </div>
               <div className={styles.newest_posts}>
                 {posts
                   .filter((post) => post.id !== id)
                   .slice(0, 2)
                   .map((post) => (
-                    <BlogCard post={post} key={post.id}/>
+                    <BlogCard post={post} key={post.id} />
                   ))}
               </div>
             </div>
@@ -93,7 +93,7 @@ function PostFooter({ post }: { post: PostType }) {
           <p>Visualization</p>
         </div>
         <div className={styles.views_message}>
-          <p>{post?.vizualization}</p>
+          <p>0</p>
           <p>Comments</p>
         </div>
       </div>

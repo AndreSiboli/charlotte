@@ -23,7 +23,7 @@ type ContentType =
   | {
       type: "quote";
       property: {
-        text: string;
+        quote: string;
         author?: string;
       };
     }
@@ -31,6 +31,12 @@ type ContentType =
       type: "sub-title";
       property: {
         title: string;
+      };
+    }
+  | {
+      type: "list";
+      property: {
+        items: string[];
       };
     };
 

@@ -38,7 +38,8 @@ export const posts: PostType[] = [
       {
         type: "quote",
         property: {
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam repellendus ipsa necessitatibus quasi vitae eius ratione cumque molestiae. Harum, eligendi?",
+          quote:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam repellendus ipsa necessitatibus quasi vitae eius ratione cumque molestiae. Harum, eligendi?",
         },
       },
       {
@@ -193,13 +194,26 @@ export const posts: PostType[] = [
       {
         type: "text",
         property: {
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse velit voluptatibus rem quae ea, facere cumque veritatis:",
+        },
+      },
+      {
+        type: "list",
+        property: {
+          items: ["Lorem", "Ipsum", "Dolor", "Consectetur"],
+        },
+      },
+      {
+        type: "text",
+        property: {
           text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse velit voluptatibus rem quae ea, facere cumque veritatis. Repellat non neque, natus inventore laborum quis sapiente praesentium autem laudantium sed tempora quibusdam quasi tenetur repellendus ad dolorum quos cumque excepturi earum, possimus sequi libero illo animi voluptate. Omnis rem ipsam fugiat neque sequi, similique praesentium! Nisi fugiat quas eligendi esse magni sapiente impedit praesentium magnam consectetur, veniam, ipsum eos, eveniet ad. Accusantium sunt dolores ipsam reprehenderit, dolore optio voluptatum voluptates sed alias animi distinctio, totam incidunt consequatur? Blanditiis tempore fugiat dolore atque impedit quaerat esse exercitationem harum maiores, est deleniti dolorem.",
         },
       },
       {
         type: "quote",
         property: {
-          text: "Repellat non neque, natus inventore laborum quis sapiente praesentium autem laudantium sed tempora quibusdam.",
+          quote:
+            "Repellat non neque, natus inventore laborum quis sapiente praesentium autem laudantium sed tempora quibusdam.",
         },
       },
       {

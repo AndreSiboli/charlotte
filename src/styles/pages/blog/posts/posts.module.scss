@@ -5,7 +5,9 @@
   padding: 7em 2em;
 
   &_title {
-    text-align: center;
+    h1 {
+      text-align: center;
+    }
   }
 
   &_post {
