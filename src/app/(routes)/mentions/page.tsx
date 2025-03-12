@@ -1,6 +1,6 @@
+import { photos } from "@/data/photos";
 import styles from "@/styles/pages/mentions.module.scss";
 import Container from "@/components/layout/Container";
-import { photos } from "@/data/photos";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,7 +21,7 @@ export default function Mention() {
                 key={photo.id}
               >
                 <figure className={styles.author_image}>
-                  <Image src={photo.src} alt={photo.alt} sizes="100vw" />
+                  <Image src={photo.src} alt={photo.alt} sizes="100vw" loading="lazy"/>
                 </figure>
                 <div>
                   <h2>{photo.author.name}</h2>

@@ -26,12 +26,12 @@ export default function SocialMedia() {
   ];
 
   return (
-    <div className={styles.media}>
+    <nav className={styles.media}>
       {social.map((s) => (
         <Link href={s.to} aria-label={s.label} target="_blank" key={s.to}>
           {s.icon}
         </Link>
       ))}
-    </div>
+    </nav>
   );
 }

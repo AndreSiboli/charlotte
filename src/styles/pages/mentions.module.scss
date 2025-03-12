@@ -25,6 +25,14 @@
     padding: 1em;
     box-shadow: 0 0 2px #0002;
     margin-top: 1em;
+    background: var.$neutral_color_100;
+    transition: filter .15s ease-in-out;
+
+    @include mix.OnlyPc{
+      &:hover{
+        filter: brightness(.8);
+      }
+    }
 
     &_image {
       width: 100%;

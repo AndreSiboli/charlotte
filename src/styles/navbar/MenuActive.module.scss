@@ -2,36 +2,59 @@
 @use "@/styles/_dirs/mixins" as mix;
 
 .menu_wrapper {
-  position: fixed;
-  visibility: hidden;
-  inset: 0;
-  transition: 0.25s ease-in-out;
-  z-index: 99;
+  width: 100%;
+  height: 100%;
+  position: relative;
 
   .menu {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    height: 100%;
     background: var.$neutral_color_100;
-    border-radius: 1em 1em 0 0;
-    box-shadow: 0 0 5px 1px #0005;
-    max-height: 0;
-    overflow: hidden;
+    padding-top: 4em;
     transition: max-height 0.25s ease-in-out;
+
+    &_header {
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      top: 12px;
+      right: 15px;
+
+      button {
+        display: block;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+
+        svg {
+          display: block;
+          font-size: 3em;
+          transition: transform 0.25s ease-in-out;
+        }
+
+        @include mix.OnlyPc {
+          &:hover {
+            svg {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
 
     &_container {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 1em;
+      gap: 2em;
+      width: 100%;
       height: 100%;
-      padding: 1em 2em;
+      padding: 1em;
+      overflow: auto;
     }
 
     &_navigation {
       display: grid;
-      grid-template-columns: repeat(3, minmax(50px, 100px));
+      grid-template-columns: repeat(auto-fill, minmax(50px, 120px));
       justify-content: space-evenly;
 
       .navigation_link {
@@ -70,37 +93,22 @@
 
     &_footer {
       display: flex;
-      justify-content: flex-end;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5em;
 
-      button {
-        display: block;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-
+      .footer_media {
         svg {
-          display: block;
-          font-size: 2em;
-          transition: transform 0.25s ease-in-out;
-        }
-
-        @include mix.OnlyPc {
-          &:hover {
-            svg {
-              transform: rotate(180deg);
-            }
-          }
+          color: #000 !important;
         }
       }
-    }
-  }
 
-  &.active {
-    visibility: visible;
-    background: #0003;
-
-    .menu {
-      max-height: 500px;
+      .footer_rights {
+        p {
+          color: var.$neutral_color_600;
+          align-items: center;
+        }
+      }
     }
   }
 }

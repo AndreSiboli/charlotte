@@ -32,6 +32,7 @@ export default function Works() {
                     <Image
                       src={work.src}
                       alt={work.alt}
+                      loading="lazy"
                       style={{ objectFit: "cover", width: "100%" }}
                     />
                   </figure>

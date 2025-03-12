@@ -420,16 +420,6 @@ export const photos: PhotosType[] = [
     tags: ["animal", "bull", "tree"],
   },
   {
-    id: "AAP111",
-    author: {
-      name: "Becca Correia",
-      href: "https://www.pexels.com/pt-br/@beccacorreiaph/",
-    },
-    src: AAP111,
-    alt: "A lot of birds flying",
-    tags: ["animal", "bird", "birds", "sky"],
-  },
-  {
     id: "AAO111",
     author: {
       name: "Väinö Parjanen",
@@ -438,5 +428,15 @@ export const photos: PhotosType[] = [
     src: AAO111,
     alt: "A lot of birds flying",
     tags: ["animal", "bird", "birds", "sky"],
+  },
+  {
+    id: "AAP111",
+    author: {
+      name: "Becca Correia",
+      href: "https://www.pexels.com/pt-br/@beccacorreiaph/",
+    },
+    src: AAP111,
+    alt: "Woman laying on the floor",
+    tags: ["human", "female", "woman", "laying"],
   },
 ];
