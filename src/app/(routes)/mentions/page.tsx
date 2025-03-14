@@ -4,7 +4,33 @@ import Container from "@/components/layout/Container";
 import Image from "next/image";
 import Link from "next/link";
 
+import AAA111 from "@/assets/photographer/pexels-vario-2149731000-30766043.jpg";
+import AAA112 from "@/assets/photographer/pexels-vario-2149731000-30766044.jpg";
+
 export default function Mention() {
+  const photographies = [
+    {
+      id: "AAA111",
+      author: {
+        name: "VARIO",
+        href: "https://www.pexels.com/pt-br/@vario-2149731000/",
+      },
+      src: AAA111,
+      alt: "Beautiful woman posing on snow",
+      tags: ["human", "female", "woman", "snow", "cold", "sweater"],
+    },
+    {
+      id: "AAA112",
+      author: {
+        name: "VARIO",
+        href: "https://www.pexels.com/pt-br/@vario-2149731000/",
+      },
+      src: AAA112,
+      alt: "Beautiful woman standing on snow",
+      tags: ["human", "female", "woman", "snow", "cold", "sweater"],
+    },
+  ].concat(photos);
+
   return (
     <div className={styles.mentions}>
       <Container>
@@ -13,7 +39,7 @@ export default function Mention() {
             <h1>Mentions</h1>
           </div>
           <div className={styles.mentions_authors}>
-            {photos.map((photo) => (
+            {photographies.map((photo) => (
               <Link
                 href={photo.author.href}
                 target="_blank"
@@ -21,7 +47,12 @@ export default function Mention() {
                 key={photo.id}
               >
                 <figure className={styles.author_image}>
-                  <Image src={photo.src} alt={photo.alt} sizes="100vw" loading="lazy"/>
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    sizes="100vw"
+                    loading="lazy"
+                  />
                 </figure>
                 <div>
                   <h2>{photo.author.name}</h2>

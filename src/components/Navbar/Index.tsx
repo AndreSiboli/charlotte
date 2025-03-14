@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import styles from "@/styles/navbar/Index.module.scss";
 
 import Container from "@/components/layout/Container";
@@ -13,7 +13,6 @@ import { PiInstagramLogo } from "react-icons/pi";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [isOnTop, setIsOnTop] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
   const domains = [
@@ -65,7 +64,7 @@ export default function Navbar() {
 
   useEffect(() => {
     closeMenu();
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <header

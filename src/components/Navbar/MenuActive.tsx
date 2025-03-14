@@ -44,7 +44,7 @@ export default function MenuActive(props: PropsType) {
             <nav className={styles.menu_navigation}>
               {domains.map((domain) => (
                 <div className={styles.navigation_link} key={domain.to}>
-                  <Link href={domain.to} key={domain.to}>
+                  <Link href={domain.to} key={domain.to} onClick={handleMenu}>
                     {domain.icon}
                     {domain.text}
                   </Link>
