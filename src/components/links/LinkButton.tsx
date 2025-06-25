@@ -11,11 +11,11 @@ interface PropsType extends ComponentProps<"a"> {
 }
 
 export default function LinkButton(props: PropsType) {
-  const { text, href, variant, style } = props;
+  const { text, href, variant, style, ...rest } = props;
 
   return (
     <Link
-      {...props}
+      {...rest}
       href={href}
       className={`${styles.link} ${styles[variant]}`}
       style={style}

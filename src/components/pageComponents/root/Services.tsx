@@ -1,5 +1,4 @@
 import styles from "@/styles/pageComponents/root/Services.module.scss";
-import Container from "@/components/layout/Container";
 import {
   PiChurchThin,
   PiCakeThin,
@@ -21,7 +20,6 @@ export default function Services() {
 
   return (
     <div className={styles.services} id="services">
-      <Container>
         <div className={styles.services_container}>
           {[0, 1, 2].map((num) => (
             <div
@@ -38,7 +36,6 @@ export default function Services() {
             </div>
           ))}
         </div>
-      </Container>
     </div>
   );
 }

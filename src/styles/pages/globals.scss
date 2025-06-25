@@ -13,6 +13,13 @@
   --clr-pri-normal: #{var.$brand-color-500};
   --clr-pri-hard: #{var.$brand-color-800};
 
+  --bg-dark-soft: #{var.$clr-dark-soft};
+  --bg-dark-normal: #{var.$clr-dark-normal};
+  --bg-dark-hard: #{var.$clr-dark-hard};
+  --bg-light-soft: #{var.$clr-light-soft};
+  --bg-light-normal: #{var.$clr-light-normal};
+  --bg-light-hard: #{var.$clr-light-hard};
+
   --neutral-color-100: #{var.$neutral_color_100};
   --neutral-color-200: #{var.$neutral_color_200};
   --neutral-color-300: #{var.$neutral_color_300};
