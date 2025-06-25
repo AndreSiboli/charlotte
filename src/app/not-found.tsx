@@ -16,7 +16,7 @@ export default function NotFound() {
               <br />
               Because it couldn’t focus on the right path!
             </p>
-            <Link href='/'>Come back</Link>
+            <Link href="/">Come back</Link>
           </div>
         </div>
       </Container>

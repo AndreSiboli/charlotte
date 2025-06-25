@@ -1,9 +1,15 @@
 import MainContainer from "@/components/layout/MainContainer";
 import "@/styles/pages/globals.scss";
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Manrope, Playfair } from "next/font/google";
 
-const nunito = Nunito({
+const playfair = Playfair({
+  subsets: ["latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
+});
+
+const manrope = Manrope({
   subsets: ["latin-ext"],
   weight: ["400", "500", "600", "700"],
 });
@@ -21,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={nunito.className}>
+      <body className={`${manrope.className} ${playfair.variable}`}>
         <MainContainer>{children}</MainContainer>
       </body>
     </html>

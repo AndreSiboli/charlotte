@@ -33,7 +33,7 @@ export default function MenuActive(props: PropsType) {
   return (
     <div className={`${styles.menu_wrapper}`}>
       <header className={styles.menu_header}>
-        <button aria-label="close menu" onClick={handleMenu}>
+        <button aria-label="Close menu" onClick={handleMenu}>
           <PiX />
         </button>
       </header>

@@ -13,7 +13,7 @@ import { PiInstagramLogo } from "react-icons/pi";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [isOnTop, setIsOnTop] = useState(false);
+  const [isOnTop, setIsOnTop] = useState(true);
   const [isOpened, setIsOpened] = useState(false);
   const domains = [
     { to: "/#services", text: "Services" },
@@ -24,15 +24,12 @@ export default function Navbar() {
   ];
 
   function scrolling() {
-    const scroll = window.scrollY;
-    if (!scroll) return setIsOnTop(true);
-    setIsOnTop(false);
+    setIsOnTop(window.scrollY <= 50);
   }
 
   function isDomain() {
     const outDomains = ["/"];
-    if (outDomains.includes(pathname)) return false;
-    return true;
+    return !outDomains.includes(pathname);
   }
 
   function closeMenu() {
@@ -41,26 +38,20 @@ export default function Navbar() {
 
   function windowWidth() {
     const width = window.innerWidth;
-
     if (width > 900) closeMenu();
   }
 
   useEffect(() => {
     scrolling();
+
     window.addEventListener("resize", windowWidth);
-
-    return () => {
-      window.removeEventListener("resize", windowWidth);
-    };
-  }, []);
-
-  useEffect(() => {
     window.addEventListener("scroll", scrolling);
 
     return () => {
+      window.removeEventListener("resize", windowWidth);
       window.removeEventListener("scroll", scrolling);
     };
-  }, [isOnTop]);
+  }, []);
 
   useEffect(() => {
     closeMenu();
@@ -89,7 +80,7 @@ export default function Navbar() {
             </div>
             <div className={styles.navigation_action}>
               <Link
-                href="https://www.instagram/"
+                href="https://www.instagram.com/"
                 target="_blank"
                 aria-label="Instagram"
               >
@@ -98,14 +89,15 @@ export default function Navbar() {
             </div>
           </nav>
 
-          <div
+          <button
             className={styles.header_menu}
+            aria-label="Open menu"
             onClick={() => setIsOpened((prevState) => !prevState)}
           >
             <span className={styles.trace} />
             <span className={styles.trace} />
             <span className={styles.trace} />
-          </div>
+          </button>
         </div>
       </Container>
 

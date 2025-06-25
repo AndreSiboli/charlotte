@@ -1,6 +1,29 @@
 @use "@/styles/_dirs/variables" as var;
 @use "@/styles/_dirs/mixins" as mix;
 
+:root {
+  --text-dark-soft: #{var.$clr-dark-soft};
+  --text-dark-normal: #{var.$clr-dark-normal};
+  --text-dark-hard: #{var.$clr-dark-hard};
+  --text-light-soft: #{var.$clr-light-soft};
+  --text-light-normal: #{var.$clr-light-normal};
+  --text-light-hard: #{var.$clr-light-hard};
+
+  --clr-pri-soft: #{var.$brand-color-100};
+  --clr-pri-normal: #{var.$brand-color-500};
+  --clr-pri-hard: #{var.$brand-color-800};
+
+  --neutral-color-100: #{var.$neutral_color_100};
+  --neutral-color-200: #{var.$neutral_color_200};
+  --neutral-color-300: #{var.$neutral_color_300};
+  --neutral-color-400: #{var.$neutral_color_400};
+  --neutral-color-500: #{var.$neutral_color_500};
+  --neutral-color-600: #{var.$neutral_color_600};
+  --neutral-color-700: #{var.$neutral_color_700};
+  --neutral-color-800: #{var.$neutral_color_800};
+  --neutral-color-900: #{var.$neutral_color_900};
+}
+
 * {
   padding: 0;
   margin: 0;

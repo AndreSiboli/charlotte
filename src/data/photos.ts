@@ -1,6 +1,6 @@
 import { PhotosType } from "@/_types/PhotosType";
 
-import AAA111 from "@/assets/pexels-vlada-karpovich-4817149.jpg";
+import AAA111 from "@/assets/pexels-vlada-karpovich-4817130.jpg";
 import AAA112 from "@/assets/photos/pexels-13nuance-561463.jpg";
 import AAA113 from "@/assets/photos/pexels-adit-syahfiar-991235-30756289.jpg";
 import AAA114 from "@/assets/photos/pexels-adit-syahfiar-991235-30756291.jpg";

@@ -1,16 +1,6 @@
 @use "@/styles/_dirs/variables" as var;
 @use "@/styles/_dirs/mixins" as mix;
 
-@keyframes shadowEffect {
-  0%,
-  80% {
-    text-shadow: 0 0 0 transparent;
-  }
-  100% {
-    text-shadow: 0 0 15px var.$brand_color_100;
-  }
-}
-
 .hero {
   display: flex;
   justify-content: center;
@@ -18,7 +8,7 @@
   position: relative;
   min-height: 100vh;
   padding: 0em 2em;
-  color: #fff;
+  color: var(--text-light-hard);
 
   &_wallpaper {
     position: absolute;
@@ -28,37 +18,31 @@
     z-index: -1;
 
     img {
-      background: var.$neutral_color_600;
+      background: var(--clr-pri-normal);
     }
   }
 
   &_title {
     padding: 7em 0;
 
+    h1,
+    p {
+      transform: translate(0, 50px);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    }
+
     h1 {
-      font-size: calc(1.5em + 2vw);
+      font-family: var(--font-playfair), serif;
+      font-size: calc(1.5rem + 4vw);
       font-weight: normal;
       text-align: center;
       text-transform: uppercase;
-
-      span {
-        display: inline-block;
-        animation: shadowEffect 4s ease-in-out infinite alternate;
-
-        &:not(:first-child) {
-          margin-left: 0.25em;
-        }
-      }
-
-      @for $i from 1 through 9 {
-        span:nth-child(#{$i}) {
-          animation-delay: calc((($i - 1)) * 2s / 12);
-        }
-      }
+      letter-spacing: 0.1em;
     }
 
     p {
       text-align: center;
+      font-size: 1.05rem;
     }
   }
 }
