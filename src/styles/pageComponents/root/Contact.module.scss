@@ -3,15 +3,32 @@
 
 .contact {
   padding: 7em 2em;
+  padding: 0em;
 
   &_container {
     display: flex;
     justify-content: center;
-    gap: 3em;
     min-height: 500px;
+    min-height: 100dvh;
 
     @media (max-width: 1020px) {
       justify-content: center;
     }
+  }
+
+  &_wallpaper {
+    flex: 1 1 50%;
+    position: relative;
+
+    @media (width < 840) {
+      display: none;
+    }
+  }
+
+  &_form {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

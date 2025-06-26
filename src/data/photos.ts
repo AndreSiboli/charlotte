@@ -21,6 +21,7 @@ import AAP111 from "@/assets/photos/pexels-beccacorreiaph-31095847.jpg";
 import AAQ111 from "@/assets/photos/look-studio-BhijaaGNOs8-unsplash.jpg";
 import AAR111 from "@/assets/photos/bianca-castillo-1CXJ0Ndn2KY-unsplash.jpg";
 import AAS111 from "@/assets/photos/mesut-cicen-8FXrbuaRVIc-unsplash.jpg";
+import AAT111 from "@/assets/photos/nick-pliahas-pcMboyJs0Xo-unsplash.jpg";
 
 export const photos: PhotosType[] = [
   {
@@ -240,5 +241,15 @@ export const photos: PhotosType[] = [
     src: AAS111,
     alt: "Blonde Woman looking at camera",
     tags: ["human", "female", "woman", "sea"],
+  },
+  {
+    id: "AAS111",
+    author: {
+      name: "Nick Pliahas",
+      href: "https://unsplash.com/pt-br/@nick_pliachas",
+    },
+    src: AAT111,
+    alt: "Woman smiling putting her hand in front of camera",
+    tags: ["human", "female", "woman", "smiling"],
   },
 ];
