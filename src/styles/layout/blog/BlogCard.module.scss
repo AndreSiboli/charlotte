@@ -4,7 +4,7 @@
 .card {
   display: block;
   width: 100%;
-  background: var.$neutral_color_100;
+  background: var(--bg-light-hard);
   border-radius: 0.5em;
   overflow: hidden;
   box-shadow: 0 0 2px 2px #0001;
@@ -15,10 +15,11 @@
     aspect-ratio: 16/12;
     position: relative;
     overflow: hidden;
-    background: var.$brand_color_500;
+    background: var(--clr-pri-normal);
 
     img {
-      transition: transform 0.15s ease-in-out;
+      display: block;
+      transition: transform 0.2s ease-in-out;
     }
   }
 
@@ -37,7 +38,7 @@
         display: flex;
         align-items: center;
         gap: 0.25em;
-        color: var.$neutral_color_600;
+        color: var(--text-dark-soft);
 
         p {
           font-size: 0.9em;
@@ -67,7 +68,7 @@
     .middle_time {
       p {
         font-size: 0.9em;
-        color: var.$neutral_color_600;
+        color: var(--text-dark-soft);
       }
     }
   }
