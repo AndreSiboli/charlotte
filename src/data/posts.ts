@@ -1,5 +1,6 @@
 import { PostType } from "@/_types/PostsType";
 import photographer from "@/assets/photographer/pexels-vario-2149731000-30766044.jpg";
+import photographerFriend from "@/assets/photos/pexels-burcu-elmas-19583197.jpg";
 
 import AAA111 from "@/assets/photos/pexels-alex-azabache-5117913.jpg";
 import AAA112 from "@/assets/photos/pexels-vikkirillova-8796459.jpg";
@@ -131,8 +132,8 @@ export const posts: PostType[] = [
     id: "AAA114",
     title: "Lorem ipsum, consectetur.",
     author: {
-      name: "Charlotte",
-      src: photographer,
+      name: "Levi",
+      src: photographerFriend,
     },
     readingTime: "5 min read",
     createdAt: "11/09/2024",

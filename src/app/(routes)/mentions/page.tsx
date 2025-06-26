@@ -10,7 +10,7 @@ import AAA112 from "@/assets/photographer/pexels-vario-2149731000-30766044.jpg";
 export default function Mention() {
   const photographies = [
     {
-      id: "AAA111",
+      id: "BBB111",
       author: {
         name: "VARIO",
         href: "https://www.pexels.com/pt-br/@vario-2149731000/",
@@ -20,7 +20,7 @@ export default function Mention() {
       tags: ["human", "female", "woman", "snow", "cold", "sweater"],
     },
     {
-      id: "AAA112",
+      id: "BBB222",
       author: {
         name: "VARIO",
         href: "https://www.pexels.com/pt-br/@vario-2149731000/",

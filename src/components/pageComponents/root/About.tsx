@@ -91,7 +91,7 @@ export default function About() {
         scrub: 0.5,
       },
       y: 40,
-      autoAlpha: 0,
+      opacity: 0,
       duration: 0.3,
       ease: "power2.out",
     });
