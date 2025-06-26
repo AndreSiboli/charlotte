@@ -4,7 +4,7 @@ import { photos } from "@/data/photos";
 import styles from "@/styles/pageComponents/root/Works.module.scss";
 import Container from "@/components/layout/Container";
 import Image from "next/image";
-import { useEffect, useMemo, useRef } from "react";
+import { useLayoutEffect, useMemo, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
@@ -31,24 +31,30 @@ export default function Works() {
   }, []);
   const imagesRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!imagesRef.current) return;
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      if (!imagesRef.current) return;
 
-    const children = imagesRef.current.children;
+      const children = imagesRef.current.children;
 
-    [...children].forEach((child) => {
-      gsap.from(child, {
-        scrollTrigger: {
-          trigger: child,
-          start: "-50px bottom",
-          end: "50% bottom",
-          scrub: 0.5,
-        },
-        duration: 0.25,
-        y: 50,
-        ease: "ease.inOut",
+      [...children].forEach((child) => {
+        gsap.from(child, {
+          scrollTrigger: {
+            trigger: child,
+            start: "-50px bottom",
+            end: "50% bottom",
+            scrub: 0.5,
+          },
+          duration: 0.25,
+          y: 50,
+          ease: "ease.inOut",
+        });
       });
     });
+
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   return (

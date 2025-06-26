@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import gsap from "gsap";
 import styles from "@/styles/pageComponents/root/About.module.scss";
@@ -22,102 +22,105 @@ export default function About() {
 
   const imageRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (
-      !parentRef.current ||
-      !articleRef.current ||
-      !imageRef.current ||
-      !articleParagraphRef.current
-    )
-      return;
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: articleRef.current,
-        start: "top bottom",
-        end: "15% top",
-        scrub: 0.5,
-      },
-    });
-
-    const splitText = SplitText.create(articleParagraphRef.current, {
-      type: "lines",
-    });
-
-    tl.fromTo(
-      articleTitleRef.current,
-      { y: 50, autoAlpha: 0 },
-      { y: 0, autoAlpha: 1, duration: 0.25 }
-    )
-      .fromTo(
-        articleImageRef.current,
-        {
-          clipPath: "inset(15% 15% 15% 15%)",
-          y: 50,
-          autoAlpha: 0,
-        },
-        {
-          clipPath: "inset(0% 0% 0% 0%)",
-          y: 0,
-          autoAlpha: 1,
-          duration: 0.6,
-          ease: "power2.out",
-        },
-        "-=0.3"
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      if (
+        !parentRef.current ||
+        !articleRef.current ||
+        !imageRef.current ||
+        !articleParagraphRef.current ||
+        !articleButtonRef.current
       )
-      .fromTo(
-        splitText.lines,
-        {
-          y: 40,
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-          autoAlpha: 0,
-        },
-        {
-          y: 0,
-          "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-          autoAlpha: 1,
-          stagger: 0.05,
-          ease: "power1.out",
-          duration: 0.3,
-        },
-        "-=0.4"
-      );
+        return;
 
-    gsap.from(articleButtonRef.current, {
-      scrollTrigger: {
-        trigger: articleRef.current,
-        start: "70% bottom",
-        end: "30% top",
-        scrub: 0.5,
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.out",
-    });
-
-    gsap.fromTo(
-      imageRef.current,
-      {
-        clipPath: "inset(15% 15% 15% 15%)",
-        y: 100,
-      },
-      {
+      const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: parentRef.current,
-          start: "10% bottom",
-          end: "80% bottom",
+          trigger: articleRef.current,
+          start: "top bottom",
+          end: "15% top",
           scrub: 0.5,
         },
-        y: 0,
-        clipPath: "inset(0% 0% 0% 0%)",
-        duration: 0.15,
-        ease: "expo",
-      }
-    );
+      });
+
+      const splitText = SplitText.create(articleParagraphRef.current, {
+        type: "lines",
+      });
+
+      tl.fromTo(
+        articleTitleRef.current,
+        { y: 50, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: 0.25 }
+      )
+        .fromTo(
+          articleImageRef.current,
+          {
+            clipPath: "inset(15% 15% 15% 15%)",
+            y: 50,
+            autoAlpha: 0,
+          },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
+        .fromTo(
+          splitText.lines,
+          {
+            y: 40,
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+            autoAlpha: 0,
+          },
+          {
+            y: 0,
+            "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+            autoAlpha: 1,
+            stagger: 0.05,
+            ease: "power1.out",
+            duration: 0.3,
+          },
+          "-=0.4"
+        );
+
+      gsap.from(articleButtonRef.current, {
+        scrollTrigger: {
+          trigger: articleRef.current,
+          start: "70% bottom",
+          end: "30% top",
+          scrub: 0.5,
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+
+      gsap.fromTo(
+        imageRef.current,
+        {
+          clipPath: "inset(15% 15% 15% 15%)",
+          y: 100,
+        },
+        {
+          scrollTrigger: {
+            trigger: parentRef.current,
+            start: "10% bottom",
+            end: "80% bottom",
+            scrub: 0.5,
+          },
+          y: 0,
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 0.15,
+          ease: "expo",
+        }
+      );
+    });
 
     return () => {
-      tl.kill();
+      ctx.revert();
     };
   }, []);
 

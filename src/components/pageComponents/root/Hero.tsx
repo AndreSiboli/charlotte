@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import styles from "@/styles/pageComponents/root/Hero.module.scss";
@@ -16,36 +16,38 @@ export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
 
-  useEffect(() => {
-    if (
-      !titleRef.current ||
-      !paragraphRef.current ||
-      !wallpaperRef.current ||
-      !parentRef.current
-    )
-      return;
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      if (
+        !titleRef.current ||
+        !paragraphRef.current ||
+        !wallpaperRef.current ||
+        !parentRef.current
+      )
+        return;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: parentRef.current,
-        start: "10% top",
-        end: "50% top",
-        scrub: 0.5,
-      },
-    });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: parentRef.current,
+          start: "10% top",
+          end: "50% top",
+          scrub: 0.5,
+        },
+      });
 
-    gsap.to([titleRef.current, paragraphRef.current], {
-      y: 0,
-      "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-      duration: 0.25,
-      ease: "power1",
-      onComplete: () => {
-        scrollAnimation(tl);
-      },
+      gsap.to([titleRef.current, paragraphRef.current], {
+        y: 0,
+        "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+        duration: 0.25,
+        ease: "power1",
+        onComplete: () => {
+          scrollAnimation(tl);
+        },
+      });
     });
 
     return () => {
-      tl.kill();
+      ctx.revert();
     };
   }, []);
 

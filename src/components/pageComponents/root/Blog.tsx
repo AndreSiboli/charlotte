@@ -1,7 +1,7 @@
 "use client";
 
 import { posts } from "@/data/posts";
-import { useEffect, useMemo, useRef } from "react";
+import { useLayoutEffect, useMemo, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import styles from "@/styles/pageComponents/root/Blog.module.scss";
@@ -24,21 +24,27 @@ export default function Blog() {
   }, []);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!containerRef.current) return;
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      if (!containerRef.current) return;
 
-    const children = containerRef.current.children;
+      const children = containerRef.current.children;
 
-    gsap.from(children, {
-      scrollTrigger: {
-        trigger: children,
-        start: "top bottom",
-      },
-      y: 100,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.25,
-    });
+      gsap.from(children, {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+        },
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.25,
+      });
+    }, containerRef);
+
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   return (
