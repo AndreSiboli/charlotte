@@ -50,7 +50,7 @@ export interface PostType {
   readingTime: string;
   thumbnail: StaticImageData;
   createdAt: string;
-  vizualization: number;
+  visualization: number;
   votes: number;
   content: ContentType[];
 }

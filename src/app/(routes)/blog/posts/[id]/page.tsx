@@ -4,63 +4,57 @@ import styles from "@/styles/pages/blog/posts/id.module.scss";
 import { PostType } from "@/_types/PostsType";
 import { posts } from "@/data/posts";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import DynamicPost from "@/components/layout/blog/DynamicPost";
 import Container from "@/components/layout/Container";
 import SocialMedia from "@/components/links/SocialMedia";
 import By from "@/components/layout/blog/post/By";
 import Divider from "@/components/layout/blog/post/Divider";
-import Loading from "@/components/utils/Loading";
 import BlogCard from "@/components/layout/blog/BlogCard";
 import Link from "next/link";
+import SkeletonPost from "@/components/utils/SkeletonPost";
 
 export default function Post() {
   const { id } = useParams();
   const [post, setPost] = useState<PostType | null>(null);
+  const newestPosts = useMemo(() => {
+    return posts.filter((post) => post.id !== id).slice(0, 2);
+  }, [id]);
 
   useEffect(() => {
     const foundPost = posts.find((post) => post.id === id);
     if (foundPost) setPost(foundPost);
   }, [id]);
 
+  if (!id || !post) return <SkeletonPost />;
+
   return (
     <div className={styles.post}>
       <Container>
-        {post ? (
-          <div className={styles.post_container}>
-            <article className={styles.post_article}>
-              <PostHeader post={post} /> {/* Inline */}
-              <Divider />
-              {post.content.map((cont, i) => (
-                <DynamicPost content={cont} key={cont.type + i} />
-              ))}
-              <Divider />
-              <PostFooter post={post} /> {/* Inline */}
-            </article>
+        <div className={styles.post_container}>
+          <article className={styles.post_article}>
+            <PostHeader post={post} /> {/* In file */}
+            <Divider />
+            {post.content.map((cont, i) => (
+              <DynamicPost content={cont} key={cont.type + i} />
+            ))}
+            <Divider />
+            <PostFooter post={post} /> {/* In file */}
+          </article>
 
-            <div className={styles.post_newest}>
-              <div className={styles.newest_title}>
-                <h2>Newest posts</h2>
-                <Link href="/blog/posts">See more</Link>
-              </div>
-              <div className={styles.newest_posts}>
-                {posts
-                  .filter((post) => post.id !== id)
-                  .slice(0, 2)
-                  .map((post) => (
-                    <BlogCard post={post} key={post.id} />
-                  ))}
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className={styles.post_loading}>
-            <div className={styles.loading_container}>
-              <Loading />
-            </div>
-          </div>
-        )}
+          <section className={styles.post_newest}>
+            <header className={styles.newest_title}>
+              <h2>Newest posts</h2>
+              <Link href="/blog/posts">See more</Link>
+            </header>
+            <nav className={styles.newest_posts}>
+              {newestPosts.map((post) => (
+                <BlogCard post={post} key={post.id} />
+              ))}
+            </nav>
+          </section>
+        </div>
       </Container>
     </div>
   );
@@ -89,7 +83,7 @@ function PostFooter({ post }: { post: PostType }) {
 
       <div className={styles.footer_views}>
         <div className={styles.views_eye}>
-          <p>{post?.vizualization}</p>
+          <p>{post.visualization}</p>
           <p>Visualization</p>
         </div>
         <div className={styles.views_message}>

@@ -11,6 +11,10 @@
     aspect-ratio: 1/1;
     border-radius: 50%;
     overflow: hidden;
+
+    img {
+      background: var(--bg-dark-soft);
+    }
   }
 
   .by_info {

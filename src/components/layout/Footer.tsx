@@ -9,7 +9,7 @@ export default function Footer() {
     { text: "FAQ", href: "/faq" },
     { text: "Mentions", href: "/mentions" },
     { text: "License", href: "/license" },
-    { text: "Contact", href: "/#projects" },
+    { text: "Contact", href: "/#contact" },
   ];
 
   return (

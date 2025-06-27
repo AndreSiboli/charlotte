@@ -18,7 +18,7 @@ export const posts: PostType[] = [
     },
     readingTime: "1 min read",
     createdAt: "09/24/2024",
-    vizualization: 203,
+    visualization: 203,
     votes: 198,
     thumbnail: AAA111,
     content: [
@@ -60,7 +60,7 @@ export const posts: PostType[] = [
     },
     readingTime: "1 min read",
     createdAt: "10/04/2024",
-    vizualization: 156,
+    visualization: 156,
     votes: 122,
     thumbnail: AAA112,
     content: [
@@ -98,7 +98,7 @@ export const posts: PostType[] = [
     },
     readingTime: "5 min read",
     createdAt: "12/11/2024",
-    vizualization: 213,
+    visualization: 213,
     votes: 151,
     thumbnail: AAA113,
     content: [
@@ -137,7 +137,7 @@ export const posts: PostType[] = [
     },
     readingTime: "5 min read",
     createdAt: "11/09/2024",
-    vizualization: 503,
+    visualization: 503,
     votes: 162,
     thumbnail: AAA114,
     content: [
@@ -176,7 +176,7 @@ export const posts: PostType[] = [
     },
     readingTime: "4 min read",
     createdAt: "12/16/2025",
-    vizualization: 455,
+    visualization: 455,
     votes: 303,
     thumbnail: AAA115,
     content: [

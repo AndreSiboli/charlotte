@@ -33,11 +33,11 @@ export default function BlogCard(props: PropsType) {
         <div className={styles.info_views}>
           <div className={styles.views_eye}>
             <PiEye />
-            <p>{post.vizualization}</p>
+            <p>{post.visualization}</p>
           </div>
           <div className={styles.views_message}>
             <FaRegMessage />
-            <p>{post.vizualization - 54}</p>
+            <p>{post.visualization - 54}</p>
           </div>
         </div>
 

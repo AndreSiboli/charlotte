@@ -6,7 +6,7 @@
   --max-width: 800px;
 
   @media (max-width: 360px) {
-    padding: 7em .5em;
+    padding: 7em 0.5em;
   }
 
   &_article {
@@ -138,17 +138,6 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1em;
       margin-top: 1em;
-    }
-  }
-
-  &_loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 500px;
-
-    .loading_container {
-      width: 75px;
     }
   }
 }
