@@ -1,12 +1,12 @@
 import MainContainer from "@/components/layout/MainContainer";
 import "@/styles/pages/globals.scss";
 import type { Metadata } from "next";
-import { Manrope, Playfair } from "next/font/google";
+import { Manrope, Sora } from "next/font/google";
 
-const playfair = Playfair({
+const playfair = Sora({
   subsets: ["latin-ext"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair",
+  variable: "--font-sora",
 });
 
 const manrope = Manrope({

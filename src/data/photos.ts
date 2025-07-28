@@ -1,6 +1,6 @@
 import { PhotosType } from "@/_types/PhotosType";
 
-import AAA111 from "@/assets/pexels-vlada-karpovich-4817130.jpg";
+import AAA111 from "@/assets/volodymyr-lymariev-ugqI4poLV-g-unsplash.jpg";
 import AAA113 from "@/assets/photos/pexels-adit-syahfiar-991235-30756289.jpg";
 import AAA114 from "@/assets/photos/pexels-adit-syahfiar-991235-30756291.jpg";
 import AAA118 from "@/assets/photos/pexels-cottonbro-6256852.jpg";
@@ -27,12 +27,12 @@ export const photos: PhotosType[] = [
   {
     id: "AAA111",
     author: {
-      name: "Vlada Karpovich",
-      href: "https://www.pexels.com/pt-br/@vlada-karpovich/",
+      name: "Volodymyr Lymariev",
+      href: "https://unsplash.com/pt-br/@vlmrv",
     },
     src: AAA111,
-    alt: "Beautiful woman sitting on cloth with rose petals",
-    tags: ["human", "female", "woman", "dress", "sunlight", "grass", "rose"],
+    alt: "Beautiful female eye looking at camera",
+    tags: ["human", "female", "woman", "eye", "sunlight"],
   },
   {
     id: "AAA113",

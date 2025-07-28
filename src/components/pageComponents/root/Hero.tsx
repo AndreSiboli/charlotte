@@ -6,7 +6,7 @@ import gsap from "gsap";
 import styles from "@/styles/pageComponents/root/Hero.module.scss";
 import Img from "@/components/utils/Img";
 import Container from "@/components/layout/Container";
-import heroImage from "@/assets/pexels-vlada-karpovich-4817130.jpg";
+import heroImage from "@/assets/volodymyr-lymariev-ugqI4poLV-g-unsplash.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +15,7 @@ export default function Hero() {
   const wallpaperRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const ease = "cubic-bezier(0.215, 0.60, 0.355, 1)";
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -26,24 +27,27 @@ export default function Hero() {
       )
         return;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: parentRef.current,
-          start: "10% top",
-          end: "50% top",
-          scrub: 0.5,
-        },
-      });
+      const tl = gsap.timeline();
 
-      gsap.to([titleRef.current, paragraphRef.current], {
-        y: 0,
+      tl.to(wallpaperRef.current, {
         "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-        duration: 0.25,
-        ease: "power1",
-        onComplete: () => {
-          scrollAnimation(tl);
+        scale: 1,
+        duration: 0.6,
+        delay: 0.25,
+        ease,
+      }).to(
+        [titleRef.current, paragraphRef.current],
+        {
+          y: 0,
+          "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+          duration: 0.25,
+          ease,
+          onComplete: () => {
+            scrollAnimation();
+          },
         },
-      });
+        "-=.3"
+      );
     });
 
     return () => {
@@ -51,22 +55,31 @@ export default function Hero() {
     };
   }, []);
 
-  function scrollAnimation(tl: gsap.core.Timeline) {
+  function scrollAnimation() {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: parentRef.current,
+        start: "10% top",
+        end: "50% top",
+        scrub: 0.5,
+      },
+    });
+
     tl.to(titleRef.current, {
-      y: -300,
-      duration: 0.15,
+      y: -250,
+      duration: 0.25,
       opacity: 0,
-      ease: "power1.inOut",
+      ease,
     })
       .to(
         paragraphRef.current,
         {
-          y: -300,
-          duration: 0.15,
+          y: -250,
+          duration: 0.25,
           opacity: 0,
-          ease: "power1.inOut",
+          ease,
         },
-        "-=.15"
+        "-=.25"
       )
       .to(
         wallpaperRef.current!.children,
@@ -77,9 +90,9 @@ export default function Hero() {
             end: "40% top",
             scrub: 0.5,
           },
-          objectPosition: "center 100%",
-          duration: 0.25,
-          ease: "power1",
+          scale: 1.05,
+          duration: 0.6,
+          ease,
         },
         "-=.15"
       );
@@ -88,7 +101,7 @@ export default function Hero() {
   return (
     <main className={styles.hero} ref={parentRef}>
       <figure className={styles.hero_wallpaper} ref={wallpaperRef}>
-        <Img src={heroImage} style={{ objectPosition: "center 70%" }} />
+        <Img src={heroImage} style={{ objectPosition: "58% center" }} />
       </figure>
 
       <Container>

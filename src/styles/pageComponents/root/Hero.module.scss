@@ -3,27 +3,28 @@
 
 .hero {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   position: relative;
   min-height: 100vh;
   padding: 0em 2em;
   color: var(--text-light-hard);
+  background: var(--bg-dark-normal);
+  overflow: hidden;
 
   &_wallpaper {
     position: absolute;
     inset: 0;
     filter: brightness(0.6);
     pointer-events: none;
-    z-index: -1;
-
-    img {
-      background: var(--clr-pri-normal);
-    }
+    z-index: 1;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    transform: scale(1.3);
   }
 
   &_title {
+    position: relative;
     padding: 7em 0;
+    z-index: 2;
 
     h1,
     p {
@@ -32,16 +33,14 @@
     }
 
     h1 {
-      font-family: var(--font-playfair), serif;
-      font-size: calc(1.5rem + 4vw);
+      font-family: var(--font-sora), serif;
+      font-size: clamp(1.5rem, 1.5rem + 4vw, 8rem);
       font-weight: normal;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.075em;
+      margin-left: -10px;
     }
 
     p {
-      text-align: center;
       font-size: 1.05rem;
     }
   }
