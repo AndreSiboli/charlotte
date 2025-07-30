@@ -22,6 +22,12 @@ import AAQ111 from "@/assets/photos/look-studio-BhijaaGNOs8-unsplash.jpg";
 import AAR111 from "@/assets/photos/bianca-castillo-1CXJ0Ndn2KY-unsplash.jpg";
 import AAS111 from "@/assets/photos/mesut-cicen-8FXrbuaRVIc-unsplash.jpg";
 import AAT111 from "@/assets/photos/nick-pliahas-pcMboyJs0Xo-unsplash.jpg";
+import AAU111 from "@/assets/photos/richard-brutyo-Sg3XwuEpybU-unsplash.jpg";
+import AAV111 from "@/assets/photos/nathan-dumlao-5BB_atDT4oA-unsplash.jpg";
+import AAW111 from "@/assets/photos/carlos-vaz-KP4bxnxAilU-unsplash.jpg";
+import AAX111 from "@/assets/photos/mohamadreza-khashay-ziubUDopHmc-unsplash.jpg";
+import AAY111 from "@/assets/photos/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg";
+import AAZ111 from "@/assets/photos/zuzanka-galczynska-c5_eQi4rrjA-unsplash.jpg";
 
 export const photos: PhotosType[] = [
   {
@@ -251,5 +257,65 @@ export const photos: PhotosType[] = [
     src: AAT111,
     alt: "Woman smiling putting her hand in front of camera",
     tags: ["human", "female", "woman", "smiling"],
+  },
+  {
+    id: "AAU111",
+    author: {
+      name: "Richard Brutyo",
+      href: "https://unsplash.com/pt-br/@richardbrutyo",
+    },
+    src: AAU111,
+    alt: "A dog with a flower in mounth",
+    tags: ["animal", "dog", "flower"],
+  },
+  {
+    id: "AAV111",
+    author: {
+      name: "Nathan Dumlao",
+      href: "https://unsplash.com/pt-br/@nate_dumlao",
+    },
+    src: AAV111,
+    alt: "A couple in their weeding",
+    tags: ["human", "man", "woman", "weeding"],
+  },
+  {
+    id: "AAW111",
+    author: {
+      name: "Carlos Vaz",
+      href: "https://unsplash.com/pt-br/@uberalles",
+    },
+    src: AAW111,
+    alt: "A brunette woman's portrait",
+    tags: ["female", "woman", "portrait", "glasses"],
+  },
+  {
+    id: "AAX111",
+    author: {
+      name: "MohamadReza Khashay",
+      href: "https://unsplash.com/pt-br/@khashi_photo",
+    },
+    src: AAX111,
+    alt: "A woman with her hand in front of her face",
+    tags: ["female", "woman", "model", "glasses"],
+  },
+  {
+    id: "AAY111",
+    author: {
+      name: "Pietro De Grandi",
+      href: "https://unsplash.com/pt-br/@peter_mc_greats",
+    },
+    src: AAY111,
+    alt: "A beautiful mountainous landscape",
+    tags: ["landscape", "ocean", "montain", "boat"],
+  },
+  {
+    id: "AAZ111",
+    author: {
+      name: "Zuzanka Galczynska",
+      href: "https://unsplash.com/pt-br/@zgalczynska",
+    },
+    src: AAZ111,
+    alt: "A crowd watching a firework show",
+    tags: ["crowd", "show", "firework", "night"],
   },
 ];

@@ -13,10 +13,10 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var.$brand_color_500;
+    background: var(--bg-dark-normal);
 
     &:hover {
-      background: #a7889877;
+      background: var(--bg-dark-soft);
     }
   }
 }

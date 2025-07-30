@@ -10,12 +10,13 @@
 .services {
   padding: 5em 0em;
   user-select: none;
+  position: relative;
+  z-index: 3;
 
   &_container {
     --slider-gap: 2em;
     display: flex;
     gap: var(--slider-gap);
-    overflow-x: hidden;
 
     @include mix.OnlyPc {
       &:hover > .services_slider {
@@ -34,24 +35,46 @@
 
   .service {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 125px;
-    aspect-ratio: 1/1;
+    position: relative;
 
-    &_icon {
-      svg {
-        display: block;
-        margin: 0 auto;
-        font-size: 5em;
-        color: var.$brand_color_500;
-      }
+    &_break {
+      font-size: 3.5rem;
+      margin-left: calc(1.5rem);
+      pointer-events: none;
     }
 
-    &_title {
-      text-transform: uppercase;
-      color: var.$neutral_color_500;
+    &_wrapper {
+      position: relative;
+
+      > p {
+        display: flex;
+        align-items: center;
+        font-size: 3.5em;
+        font-family: var(--font-sora);
+        color: var(--text-dark-normal);
+      }
+
+      &.active {
+        .service_image {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      .service_image {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        width: 200px;
+        height: 150px;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        pointer-events: none;
+        transition: visibility 0.15s ease-in-out, opacity 0.15s ease-in-out,
+          transform 0.1s ease-in-out;
+      }
     }
   }
 }
