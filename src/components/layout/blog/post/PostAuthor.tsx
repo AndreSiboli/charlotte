@@ -1,22 +1,22 @@
 import { PostType } from "@/_types/PostsType";
+import styles from "@/styles/layout/blog/post/PostAuthor.module.scss";
 import Img from "@/components/utils/Img";
-import styles from "@/styles/layout/blog/post/By.module.scss";
 
 interface PropsType {
   author: PostType["author"];
   createdAt: PostType["createdAt"];
 }
 
-export default function By(props: PropsType) {
+export default function PostAuthor(props: PropsType) {
   const { author, createdAt } = props;
 
   return (
-    <div className={styles.by}>
-      <figure className={styles.by_image}>
+    <div className={styles.postAuthor}>
+      <figure className={styles.postAuthor__thumbnail}>
         <Img src={author.src} />
       </figure>
 
-      <div className={styles.by_info}>
+      <div className={styles.postAuthor_info}>
         <p>{author.name}</p>
         <time>{createdAt}</time>
       </div>

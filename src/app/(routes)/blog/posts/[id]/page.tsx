@@ -9,9 +9,9 @@ import { useEffect, useMemo, useState } from "react";
 import DynamicPost from "@/components/layout/blog/DynamicPost";
 import Container from "@/components/layout/Container";
 import SocialMedia from "@/components/links/SocialMedia";
-import By from "@/components/layout/blog/post/By";
+import PostAuthor from "@/components/layout/blog/post/PostAuthor";
 import Divider from "@/components/layout/blog/post/Divider";
-import BlogCard from "@/components/layout/blog/BlogCard";
+import PostPreview from "@/components/layout/blog/PostPreview";
 import Link from "next/link";
 import SkeletonPost from "@/components/utils/SkeletonPost";
 
@@ -50,7 +50,7 @@ export default function Post() {
             </header>
             <nav className={styles.newest_posts}>
               {newestPosts.map((post) => (
-                <BlogCard post={post} key={post.id} />
+                <PostPreview post={post} key={post.id} />
               ))}
             </nav>
           </section>
@@ -63,7 +63,7 @@ export default function Post() {
 function PostHeader({ post }: { post: PostType }) {
   return (
     <header className={styles.post_header}>
-      <By author={post.author} createdAt={post.createdAt} />
+      <PostAuthor author={post.author} createdAt={post.createdAt} />
 
       <div className={styles.header_time}>
         <p>{post?.readingTime}</p>
@@ -83,7 +83,7 @@ function PostFooter({ post }: { post: PostType }) {
 
       <div className={styles.footer_views}>
         <div className={styles.views_eye}>
-          <p>{post.visualization}</p>
+          <p>{post.likes}</p>
           <p>Visualization</p>
         </div>
         <div className={styles.views_message}>

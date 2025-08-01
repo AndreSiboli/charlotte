@@ -12,37 +12,37 @@ interface MergedTypes extends PhotosType {
 }
 
 const idMatch = [
-      {
-        id: "AAU111",
-        name: "Pets",
-        position: "50% 45%",
-      },
-      {
-        id: "AAV111",
-        name: "Wedding",
-        position: "50% 50%",
-      },
-      {
-        id: "AAY111",
-        position: "50% 50%",
-        name: "Travel",
-      },
-      {
-        id: "AAZ111",
-        position: "50% 20%",
-        name: "Events",
-      },
-      {
-        id: "AAX111",
-        position: "50% 15%",
-        name: "Model",
-      },
-      {
-        id: "AAW111",
-        position: "50% 20%",
-        name: "Portrait",
-      },
-    ];
+  {
+    id: "AAU111",
+    name: "Pets",
+    position: "50% 45%",
+  },
+  {
+    id: "AAV111",
+    name: "Wedding",
+    position: "50% 50%",
+  },
+  {
+    id: "AAY111",
+    position: "50% 50%",
+    name: "Travel",
+  },
+  {
+    id: "AAZ111",
+    position: "50% 20%",
+    name: "Events",
+  },
+  {
+    id: "AAX111",
+    position: "50% 15%",
+    name: "Model",
+  },
+  {
+    id: "AAW111",
+    position: "50% 20%",
+    name: "Portrait",
+  },
+];
 
 export default function Services() {
   const services: MergedTypes[] = useMemo(() => {

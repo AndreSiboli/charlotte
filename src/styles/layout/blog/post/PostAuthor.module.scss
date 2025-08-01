@@ -1,13 +1,14 @@
 @use "@/styles/_dirs/variables" as var;
 @use "@/styles/_dirs/mixins" as mix;
 
-.by {
+.postAuthor {
   display: flex;
   gap: 1em;
 
-  .by_image {
+  &__thumbnail {
+    align-self: center;
     position: relative;
-    width: 42px;
+    width: 36px;
     aspect-ratio: 1/1;
     border-radius: 50%;
     overflow: hidden;
@@ -17,14 +18,17 @@
     }
   }
 
-  .by_info {
+  &_info {
+    line-height: 18px;
+
     p {
       font-weight: bold;
+      font-size: 0.9em;
     }
 
     time {
       color: var(--text-dark-soft);
-      font-size: 0.85em;
+      font-size: 0.8em;
     }
   }
 }

@@ -12,13 +12,15 @@ export const posts: PostType[] = [
   {
     id: "AAA111",
     title: "Lorem ipsum dolor",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, explicabo quo fuga architecto molestias ad.",
     author: {
       name: "Charlotte",
       src: photographer,
     },
     readingTime: "1 min read",
     createdAt: "09/24/2024",
-    visualization: 203,
+    likes: 203,
     votes: 198,
     thumbnail: AAA111,
     content: [
@@ -53,14 +55,16 @@ export const posts: PostType[] = [
   },
   {
     id: "AAA112",
-    title: "Lorem ipsum, dolor.",
+    title: "Lorem ipsum, dolor consectetur.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse velit voluptatibus rem quae ea, facere cumque veritatis. Repellat non neque, natus inventore laborum quis sapiente praesentium autem laudantium sed tempora quibusdam quasi tenetur repellendus ad dolorum quos cumque excepturi earum, possimus sequi libero illo animi voluptate.",
     author: {
       name: "Charlotte",
       src: photographer,
     },
     readingTime: "1 min read",
     createdAt: "10/04/2024",
-    visualization: 156,
+    likes: 156,
     votes: 122,
     thumbnail: AAA112,
     content: [
@@ -72,7 +76,7 @@ export const posts: PostType[] = [
       {
         type: "text",
         property: {
-          text: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nisi possimus dolorem tenetur, libero minus aspernatur quisquam quos cupiditate ipsam sed laborum cumque ab, autem necessitatibus cum tempora nihil iste consectetur odit itaque quasi? Quia explicabo fugiat, iure aliquid, dolorum dolorem numquam esse iste voluptate deleniti, ex odit delectus velit facilis quasi nisi vero minus perferendis ea voluptas suscipit accusamus!",
+          text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nisi possimus dolorem tenetur, libero minus aspernatur quisquam quos cupiditate ipsam sed laborum cumque ab, autem necessitatibus cum tempora nihil iste consectetur odit itaque quasi? Quia explicabo fugiat, iure aliquid, dolorum dolorem numquam esse iste voluptate deleniti, ex odit delectus velit facilis quasi nisi vero minus perferendis ea voluptas suscipit accusamus!",
         },
       },
       {
@@ -92,13 +96,15 @@ export const posts: PostType[] = [
   {
     id: "AAA113",
     title: "Lorem ipsum, consectetur.",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nisi possimus dolorem tenetur, libero minus aspernatur quisquam quos cupiditate ipsam sed laborum cumque ab, autem necessitatibus cum tempora nihil iste consectetur odit itaque quasi? Quia explicabo fugiat, iure aliquid, dolorum dolorem numquam esse iste voluptate deleniti, ex odit delectus velit facilis quasi nisi vero minus perferendis ea voluptas suscipit accusamus!",
     author: {
       name: "Charlotte",
       src: photographer,
     },
     readingTime: "5 min read",
     createdAt: "12/11/2024",
-    visualization: 213,
+    likes: 213,
     votes: 151,
     thumbnail: AAA113,
     content: [
@@ -111,7 +117,7 @@ export const posts: PostType[] = [
       {
         type: "text",
         property: {
-          text: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nisi possimus dolorem tenetur, libero minus aspernatur quisquam quos cupiditate ipsam sed laborum cumque ab, autem necessitatibus cum tempora nihil iste consectetur odit itaque quasi? Quia explicabo fugiat, iure aliquid, dolorum dolorem numquam esse iste voluptate deleniti, ex odit delectus velit facilis quasi nisi vero minus perferendis ea voluptas suscipit accusamus!",
+          text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nisi possimus dolorem tenetur, libero minus aspernatur quisquam quos cupiditate ipsam sed laborum cumque ab, autem necessitatibus cum tempora nihil iste consectetur odit itaque quasi? Quia explicabo fugiat, iure aliquid, dolorum dolorem numquam esse iste voluptate deleniti, ex odit delectus velit facilis quasi nisi vero minus perferendis ea voluptas suscipit accusamus!",
         },
       },
       {
@@ -131,13 +137,15 @@ export const posts: PostType[] = [
   {
     id: "AAA114",
     title: "Lorem ipsum, consectetur.",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis error ipsam voluptate, sunt deserunt temporibus.",
     author: {
       name: "Levi",
       src: photographerFriend,
     },
     readingTime: "5 min read",
     createdAt: "11/09/2024",
-    visualization: 503,
+    likes: 503,
     votes: 162,
     thumbnail: AAA114,
     content: [
@@ -149,7 +157,7 @@ export const posts: PostType[] = [
       {
         type: "text",
         property: {
-          text: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nisi possimus dolorem tenetur, libero minus aspernatur quisquam quos cupiditate ipsam sed laborum cumque ab, autem necessitatibus cum tempora nihil iste consectetur odit itaque quasi? Quia explicabo fugiat, iure aliquid, dolorum dolorem numquam esse iste voluptate deleniti, ex odit delectus velit facilis quasi nisi vero minus perferendis ea voluptas suscipit accusamus!",
+          text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nisi possimus dolorem tenetur, libero minus aspernatur quisquam quos cupiditate ipsam sed laborum cumque ab, autem necessitatibus cum tempora nihil iste consectetur odit itaque quasi? Quia explicabo fugiat, iure aliquid, dolorum dolorem numquam esse iste voluptate deleniti, ex odit delectus velit facilis quasi nisi vero minus perferendis ea voluptas suscipit accusamus!",
         },
       },
       {
@@ -170,13 +178,15 @@ export const posts: PostType[] = [
   {
     id: "AAA115",
     title: "Lorem ipsum, consectetur.",
+    description:
+      "Accusantium sunt dolores ipsam reprehenderit, dolore optio voluptatum voluptates sed alias animi distinctio, totam incidunt consequatur? Blanditiis tempore fugiat dolore atque impedit quaerat esse exercitationem harum maiores, est deleniti dolorem.",
     author: {
       name: "Charlotte",
       src: photographer,
     },
     readingTime: "4 min read",
     createdAt: "12/16/2025",
-    visualization: 455,
+    likes: 455,
     votes: 303,
     thumbnail: AAA115,
     content: [
@@ -187,7 +197,7 @@ export const posts: PostType[] = [
       {
         type: "text",
         property: {
-          text: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nisi possimus dolorem tenetur, libero minus aspernatur quisquam quos cupiditate ipsam sed laborum cumque ab, autem necessitatibus cum tempora nihil iste consectetur odit itaque quasi? Quia explicabo fugiat, iure aliquid, dolorum dolorem numquam esse iste voluptate deleniti, ex odit delectus velit facilis quasi nisi vero minus perferendis ea voluptas suscipit accusamus!",
+          text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nisi possimus dolorem tenetur, libero minus aspernatur quisquam quos cupiditate ipsam sed laborum cumque ab, autem necessitatibus cum tempora nihil iste consectetur odit itaque quasi? Quia explicabo fugiat, iure aliquid, dolorum dolorem numquam esse iste voluptate deleniti, ex odit delectus velit facilis quasi nisi vero minus perferendis ea voluptas suscipit accusamus!",
         },
       },
       { type: "img", property: { src: AAA115, alt: "" } },

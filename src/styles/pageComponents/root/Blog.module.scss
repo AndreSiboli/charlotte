@@ -5,21 +5,43 @@
   min-height: 500px;
   background: var.$brand_color_100;
   padding: 7em 1em;
+  padding-top: 5em;
 
   @media (max-width: 1060px) {
     padding-bottom: 2em;
   }
 
-  &_posts {
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 1em;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      width: fit-content;
+      font-weight: bold;
+      font-size: 0.95em;
+
+      &,
+      svg {
+        color: var(--text-dark-normal);
+        transition: color 0.15s ease-in-out;
+      }
+
+      @include mix.OnlyPc {
+        &:hover {
+          color: var(--text-dark-hard);
+        }
+      }
+    }
+  }
+
+  &__posts {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(calc(250px - 1em), 1fr));
     gap: 1em;
-  }
-
-  &_button {
-    max-width: 175px;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 2em;
   }
 }

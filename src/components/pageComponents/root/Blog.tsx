@@ -5,9 +5,10 @@ import { useLayoutEffect, useMemo, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import styles from "@/styles/pageComponents/root/Blog.module.scss";
-import BlogCard from "@/components/layout/blog/BlogCard";
+import PostPreview from "@/components/layout/blog/PostPreview";
 import Container from "@/components/layout/Container";
-import LinkButton from "@/components/links/LinkButton";
+import Link from "next/link";
+import { LuMoveRight } from "react-icons/lu";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,12 +24,23 @@ export default function Blog() {
       .slice(0, 4);
   }, []);
   const containerRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || !buttonRef.current) return;
 
-      const children = containerRef.current.children;
+      const children = Array.from(containerRef.current.children);
+
+      gsap.from(buttonRef.current, {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 0.25,
+      });
 
       gsap.from(children, {
         scrollTrigger: {
@@ -50,15 +62,16 @@ export default function Blog() {
   return (
     <section className={styles.blog} id="blog">
       <Container>
-        <div className={styles.blog_container}>
-          <div className={styles.blog_posts} ref={containerRef}>
-            {newestPosts.map((post) => (
-              <BlogCard post={post} key={post.id} />
-            ))}
+        <div className={styles.blog__container}>
+          <div className={styles.blog__button} ref={buttonRef}>
+            <Link href="/blog/posts">
+              More post <LuMoveRight />
+            </Link>
           </div>
-
-          <div className={styles.blog_button}>
-            <LinkButton href="/blog/posts" text="More posts" variant="v1" />
+          <div className={styles.blog__posts} ref={containerRef}>
+            {newestPosts.map((post) => (
+              <PostPreview post={post} key={post.id} />
+            ))}
           </div>
         </div>
       </Container>

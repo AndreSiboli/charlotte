@@ -43,6 +43,7 @@ type ContentType =
 export interface PostType {
   id: string;
   title: string;
+  description: string;
   author: {
     name: string;
     src: StaticImageData;
@@ -50,7 +51,7 @@ export interface PostType {
   readingTime: string;
   thumbnail: StaticImageData;
   createdAt: string;
-  visualization: number;
+  likes: number;
   votes: number;
   content: ContentType[];
 }

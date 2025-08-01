@@ -1,7 +1,7 @@
 import styles from "@/styles/pages/blog/posts/posts.module.scss";
 import { posts } from "@/data/posts";
 import Container from "@/components/layout/Container";
-import BlogCard from "@/components/layout/blog/BlogCard";
+import PostPreview from "@/components/layout/blog/PostPreview";
 
 export default function Posts() {
   const newestPosts = posts.sort((a, b) => {
@@ -22,7 +22,7 @@ export default function Posts() {
           </div>
           <div className={styles.posts_post}>
             {newestPosts.map((post) => (
-              <BlogCard post={post} key={post.id} column />
+              <PostPreview post={post} key={post.id} column />
             ))}
           </div>
         </div>
