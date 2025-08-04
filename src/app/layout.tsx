@@ -12,6 +12,7 @@ const playfair = Sora({
 const manrope = Manrope({
   subsets: ["latin-ext"],
   weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
 });
 
 export const metadata: Metadata = {

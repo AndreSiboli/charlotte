@@ -4,13 +4,15 @@ import { photos } from "@/data/photos";
 import styles from "@/styles/pageComponents/root/Works.module.scss";
 import Container from "@/components/layout/Container";
 import Image from "next/image";
-import { useLayoutEffect, useMemo, useRef } from "react";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Button from "@/components/buttons/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Works() {
+  const [viewPost, setViewPosts] = useState(false);
   const filteredImages = useMemo(() => {
     const ids = [
       "AAA121",
@@ -35,7 +37,7 @@ export default function Works() {
     const ctx = gsap.context(() => {
       if (!imagesRef.current) return;
 
-      const children = imagesRef.current.children;
+      const children = Array.from(imagesRef.current.children);
 
       [...children].forEach((child) => {
         gsap.from(child, {
@@ -46,6 +48,7 @@ export default function Works() {
             scrub: 0.5,
           },
           duration: 0.25,
+          scale: 0.9,
           y: 50,
           ease: "ease.inOut",
         });
@@ -60,11 +63,15 @@ export default function Works() {
   return (
     <div className={styles.works} id="photos">
       <Container>
-        <div className={styles.works_container}>
-          <div className={styles.works_photos} ref={imagesRef}>
+        <section
+          className={`${styles.works__section} ${
+            viewPost ? styles["works__section--expanded"] : ""
+          }`}
+        >
+          <div className={styles.works__gallery} ref={imagesRef}>
             {filteredImages.map((work) => (
-              <div className={styles.work} key={work.id}>
-                <figure className={styles.work_image}>
+              <div className={styles.works__item} key={work.id}>
+                <figure className={styles.works__image}>
                   <Image
                     src={work.src}
                     alt={work.alt}
@@ -75,7 +82,21 @@ export default function Works() {
               </div>
             ))}
           </div>
-        </div>
+
+          {!viewPost && (
+            <footer className={styles.works__footer}>
+              <div className={styles.works__action}>
+                <Button
+                  onClick={() => setViewPosts((prev) => !prev)}
+                  style={{ fontSize: ".9em" }}
+                  variant="v3"
+                >
+                  View All
+                </Button>
+              </div>
+            </footer>
+          )}
+        </section>
       </Container>
     </div>
   );

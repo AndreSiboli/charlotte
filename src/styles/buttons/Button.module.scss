@@ -1,0 +1,69 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.button {
+  font-family: var(--font-manrope);
+  padding: 1em 1.5em;
+  border-radius: 0.25em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
+
+  &.v1 {
+    background: var(--bg-light-hard);
+    border-color: var(--bg-dark-normal);
+    color: var(--text-dark-normal);
+
+    @include mix.OnlyPc {
+      &:hover {
+        background: var(--bg-dark-normal);
+        color: var(--text-light-hard);
+      }
+    }
+  }
+
+  &.v2 {
+    background: var(--bg-dark-normal);
+    border-color: var(--text-light-hard);
+    color: var(--text-light-normal);
+
+    @include mix.OnlyPc {
+      &:hover {
+        background: var(--bg-light-hard);
+        color: var(--text-dark-normal);
+      }
+    }
+  }
+
+  &.v3 {
+    background: none;
+    border: none;
+    position: relative;
+    padding: 0 0.25em;
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: -2px;
+      position: absolute;
+      background: var(--bg-dark-normal);
+      transition: width 0.15s ease-in-out;
+    }
+
+    @include mix.OnlyPc {
+      &:hover {
+        &:after {
+          left: auto;
+          right: 0;
+          width: 0;
+        }
+      }
+    }
+  }
+}
