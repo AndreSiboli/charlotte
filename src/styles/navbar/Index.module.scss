@@ -11,15 +11,9 @@
   transition: border-bottom 0.1s ease-in-out, background 0.15s ease-in-out,
     color 0.15s ease-in-out;
 
-  &_container {
+  &__container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 1.5em;
-  }
-
-  &_wrapper {
-    display: flex;
     align-items: center;
     gap: 1.5em;
   }
@@ -28,7 +22,7 @@
     z-index: 99;
   }
 
-  &_navigation {
+  &__nav {
     display: flex;
     align-items: center;
     gap: 2.5em;
@@ -37,7 +31,7 @@
       display: none;
     }
 
-    .navigation_links {
+    .header__links {
       display: flex;
       align-items: center;
       gap: 2.5em;
@@ -47,13 +41,13 @@
 
         @include mix.OnlyPc {
           &:hover {
-            transform: translate3d(0, -3px, 0);
+            transform: scale(0.95);
           }
         }
       }
     }
 
-    .navigation_action {
+    .header__social {
       display: flex;
       gap: 1em;
 
@@ -64,7 +58,7 @@
     }
   }
 
-  &_menu {
+  &__menu {
     display: none;
     position: relative;
     width: 30px;
@@ -110,29 +104,29 @@
     }
   }
 
-  &:not(.onTop) {
+  &:not(.header--onTop) {
     background: var(--neutral-color-100);
     color: var(--text-dark-normal);
     border-bottom-color: #0002;
 
-    .header_menu {
+    .header__menu {
       .trace {
         background: var(--text-dark-normal);
       }
     }
   }
 
-  &.out_domain {
+  &--outDomain {
     color: var(--text-dark-normal);
 
-    .header_menu {
+    .header__menu {
       .trace {
         background: var(--text-dark-normal);
       }
     }
   }
 
-  &.opened {
+  &--expanded {
     color: var(--text-dark-normal);
 
     .header_menu {

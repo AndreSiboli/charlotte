@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import clsx from "clsx";
 import styles from "@/styles/navbar/Index.module.scss";
 
 import Container from "@/components/layout/Container";
@@ -59,26 +60,28 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${styles.header} ${isOnTop && styles.onTop} 
-      ${isDomain() && styles.out_domain} ${isOpened && styles.opened}`}
+      className={clsx(
+        styles.header,
+        isOnTop && styles["header--onTop"],
+        isOpened && styles["header--expanded"],
+        isDomain() && styles["header--outDomain"]
+      )}
     >
       <Container>
-        <div className={styles.header_container}>
-          <div className={styles.header_wrapper}>
-            <div className={styles.header_logo}>
-              <Logo />
-            </div>
+        <div className={styles.header__container}>
+          <div className={styles.header_logo}>
+            <Logo />
           </div>
 
-          <nav className={styles.header_navigation}>
-            <div className={styles.navigation_links}>
+          <nav className={styles.header__nav}>
+            <div className={styles.header__links}>
               {domains.map((domain) => (
                 <Link href={domain.to} key={domain.to}>
                   {domain.text}
                 </Link>
               ))}
             </div>
-            <div className={styles.navigation_action}>
+            <div className={styles.header__social}>
               <Link
                 href="https://www.instagram.com/"
                 target="_blank"
@@ -90,7 +93,7 @@ export default function Navbar() {
           </nav>
 
           <button
-            className={styles.header_menu}
+            className={styles.header__menu}
             aria-label="Open menu"
             onClick={() => setIsOpened((prevState) => !prevState)}
           >

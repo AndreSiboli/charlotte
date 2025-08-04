@@ -15,7 +15,7 @@ export default function SocialMedia({ style }: PropsType) {
   const social = [
     {
       icon: <PiFacebookLogo />,
-      to: "https://www.pexels.com",
+      to: "https://www.facebook.com",
       label: "Facebook",
     },
     {
