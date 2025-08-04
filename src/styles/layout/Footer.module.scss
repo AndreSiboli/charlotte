@@ -3,33 +3,29 @@
 .footer {
   box-shadow: 0 -5px 10px 1px #0001;
 
-  &_container {
+  &__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1.5em;
     padding: 2em;
-
-    @media (max-width: 680px) {
-      padding-bottom: 5em;
-    }
   }
 
-  &_links {
+  &__nav {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1em;
   }
 
-  &_media {
+  &__social {
     a {
       font-size: 1.25em;
     }
   }
 
-  &_rights {
-    margin-top: 1em;
-
+  &__rights {
     p {
       text-align: center;
       color: var(--text-dark-soft);

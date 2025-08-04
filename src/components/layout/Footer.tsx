@@ -3,6 +3,7 @@ import Container from "./Container";
 import Logo from "./Logo";
 import SocialMedia from "@/components/links/SocialMedia";
 import Link from "next/link";
+import Divider from "./blog/post/Divider";
 
 export default function Footer() {
   const footerLinks = [
@@ -15,22 +16,35 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <Container>
-        <div className={styles.footer_container}>
-          <div className={styles.footer_logo}>
+        <section className={styles.footer__container}>
+          <div className={styles.footer__brand}>
             <Logo />
           </div>
-          <nav className={styles.footer_links}>
+
+          <nav className={styles.footer__nav}>
             {footerLinks.map((link) => (
-              <Link href={link.href} key={link.href}>{link.text}</Link>
+              <Link
+                href={link.href}
+                key={link.href}
+                className={styles.footer__link}
+              >
+                {link.text}
+              </Link>
             ))}
           </nav>
-          <nav className={styles.footer_media}>
-            <SocialMedia />
-          </nav>
-          <div className={styles.footer_rights}>
-            <p>Copyright &copy; Charlotte {new Date().getFullYear()}</p>
+
+          <div className={styles.footer__social}>
+            <SocialMedia style={{ fontSize: ".85em" }} />
           </div>
-        </div>
+
+          <Divider style={{ width: 225 }} />
+
+          <div className={styles.footer__rights}>
+            <p>
+              All rights reserved &copy; Charlotte {new Date().getFullYear()}
+            </p>
+          </div>
+        </section>
       </Container>
     </footer>
   );

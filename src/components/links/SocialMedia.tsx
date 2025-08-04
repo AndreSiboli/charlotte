@@ -1,12 +1,17 @@
 import styles from "@/styles/links/SocialMedia.module.scss";
 import Link from "next/link";
+import { CSSProperties } from "react";
 import {
   PiInstagramLogo,
   PiPinterestLogo,
   PiFacebookLogo,
 } from "react-icons/pi";
 
-export default function SocialMedia() {
+interface PropsType {
+  style?: CSSProperties;
+}
+
+export default function SocialMedia({ style }: PropsType) {
   const social = [
     {
       icon: <PiFacebookLogo />,
@@ -26,7 +31,7 @@ export default function SocialMedia() {
   ];
 
   return (
-    <nav className={styles.media}>
+    <nav className={styles.media} style={style}>
       {social.map((s) => (
         <Link href={s.to} aria-label={s.label} target="_blank" key={s.to}>
           {s.icon}

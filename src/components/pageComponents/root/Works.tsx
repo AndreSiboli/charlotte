@@ -1,12 +1,12 @@
 "use client";
 
 import { photos } from "@/data/photos";
-import styles from "@/styles/pageComponents/root/Works.module.scss";
-import Container from "@/components/layout/Container";
-import Image from "next/image";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import styles from "@/styles/pageComponents/root/Works.module.scss";
+import Image from "next/image";
+import Container from "@/components/layout/Container";
 import Button from "@/components/buttons/Button";
 
 gsap.registerPlugin(ScrollTrigger);
