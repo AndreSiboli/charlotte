@@ -9,9 +9,9 @@
   --text-light-normal: #{var.$clr-light-normal};
   --text-light-hard: #{var.$clr-light-hard};
 
-  --clr-pri-soft: #{var.$brand-color-100};
-  --clr-pri-normal: #{var.$brand-color-500};
-  --clr-pri-hard: #{var.$brand-color-800};
+  --clr-pri-soft: #{var.$clr-pri-soft};
+  --clr-pri-normal: #{var.$clr-pri-normal};
+  --clr-pri-hard: #{var.$clr-pri-hard};
 
   --bg-dark-soft: #{var.$clr-dark-soft};
   --bg-dark-normal: #{var.$clr-dark-normal};

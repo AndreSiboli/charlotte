@@ -8,8 +8,8 @@
     resize: vertical;
     width: 100%;
     padding: 1em;
-    outline-color: var.$brand_color_500;
-    border: 1px solid var.$darkest_color;
+    outline-color: var(--clr-pri-hard);
+    border: 1px solid var(--bg-dark-normal);
     border-radius: 0.5em;
     font-size: 1em;
     min-height: 200px;
@@ -21,12 +21,12 @@
       font-weight: bold;
       top: -8px;
       left: 12px;
-      background: var.$lightest_color;
+      background: var(--bg-light-hard);
       padding: 0 0.5em;
     }
 
     &:focus ~ label {
-      color: var.$brand_color_500;
+      color: var(--clr-pri-hard);
     }
   }
 
@@ -35,7 +35,6 @@
     left: 15px;
     top: 12.5px;
     pointer-events: none;
-
     transition: 0.25s ease-in-out;
   }
 }

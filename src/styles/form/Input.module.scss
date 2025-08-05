@@ -7,11 +7,11 @@
   input {
     width: 100%;
     padding: 1em;
-    outline-color: var.$brand_color_500;
-    border: 1px solid var.$darkest_color;
+    outline-color: var(--clr-pri-hard);
+    border: 1px solid var(--bg-dark-normal);
     border-radius: 0.5em;
     font-size: 1em;
-    background: var.$lightest_color !important;
+    background: var(--clr-light-hard) !important;
 
     &:focus ~ label,
     &:not(:placeholder-shown) ~ label {
@@ -20,12 +20,12 @@
       top: -8px;
       left: 12px;
       transform: translateY(0);
-      background: var.$lightest_color;
+      background: var(--bg-light-hard);
       padding: 0 0.5em;
     }
 
     &:focus ~ label {
-      color: var.$brand_color_500;
+      color: var(--clr-pri-hard);
     }
 
     &:-webkit-autofill {

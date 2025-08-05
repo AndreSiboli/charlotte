@@ -3,7 +3,7 @@
 
 .blog {
   min-height: 500px;
-  background: var.$brand_color_100;
+  background: var(--clr-pri-normal);
   padding: 7em 1em;
   padding-top: 5em;
 

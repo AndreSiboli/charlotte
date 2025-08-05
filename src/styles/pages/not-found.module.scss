@@ -14,7 +14,7 @@
 
   &_text {
     font-size: calc(1.5em + 3vw);
-    color: var.$brand_color_700;
+    color: var(--clr-pri-hard);
   }
 
   &_joke {
@@ -35,7 +35,7 @@
         left: 0;
         width: 100%;
         height: 1px;
-        background: var.$neutral_color_900;
+        background: var(--bg-dark-normal);
       }
     }
   }

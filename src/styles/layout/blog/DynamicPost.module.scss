@@ -33,7 +33,7 @@
       content: "";
       width: 5px;
       height: 100%;
-      background: var.$brand_color_100;
+      background: var(--clr-pri-normal);
       position: absolute;
       top: 0;
       left: 0;
